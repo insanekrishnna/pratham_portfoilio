@@ -106,9 +106,7 @@ export function SkillsDraggable() {
           Skills
         </h3>
 
-        <span className="hidden text-[11px] text-slate-500 dark:text-slate-400 sm:block">
-          hover on this
-        </span>
+       
       </div>
 
       {/* Skills */}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { TextShimmer } from "@/components/ui/text-shimmer";
 import { Typewriter } from "@/components/ui/typewriter";
 import { TimeCounter } from "@/components/time-counter";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -106,14 +107,13 @@ export default function Page() {
                 <FadeInText delay={0.3}>
                   <div className="flex flex-wrap items-center mt-3 gap-2 sm:gap-4 text-xs text-neutral-600 dark:text-neutral-300">
                     <span>20, he/him </span>
-                    <span className="hidden sm:inline">{"||"}</span>
+                    <span className="hidden sm:inline">{"|"}</span>
                     <span className="max-w-[38ch]">
                       <Typewriter
                         text={[
                           "Full Stack Developer",
                           "Designer",
-                          "Freelancer",
-                          "Aiming for top 1%",  
+                          "Freelancer",  
                         ]}
                         speed={90}
                         waitTime={2000}
@@ -136,7 +136,7 @@ export default function Page() {
                       className="h-6 w-20 rounded-sm bg-neutral-900 px-4 text-white shadow-sm hover:bg-neutral-900/90 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
                     >
                       <a
-                        href="https://drive.google.com/file/d/1piBeNOmXSzytUBTZqHOo8I32VBRxIejH/view?usp=drive_link"
+                        href="https://drive.google.com/file/d/1TbuyE28E3soWfBA8Npe9wdcEag5B9_E_/view?usp=drivesdk "
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="View Resume"
@@ -476,8 +476,8 @@ export default function Page() {
             <SlideUp delay={0.3}>
               <section className="mt-8 text-center section-lines p-6">
                 <FadeInText delay={0.1}>
-                  <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
-                    {"Say Hello ! "} <br />
+                  <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
+                    Still reading? That means something clicked <br /> Let’s talk. <br />
                     
                     
                    
@@ -486,7 +486,7 @@ export default function Page() {
                 <FadeInText delay={0.1}>
                   <p className="mx-auto mt-2 max-w-xl text-xs text-neutral-500 dark:text-neutral-200">
                     {
-                      "tldr; i write code, i believe how smart a person is just how fast he can learn something new"
+                      "tldr; i write code"
                     }
                   </p>
                 </FadeInText>
@@ -496,7 +496,7 @@ export default function Page() {
                   
                   <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                     <a
-                      href="mailto:iipprathamyadav@gmail.com"
+                      href="mailto:iiprathamyadav@gmail.com"
                       target="_blank"
                       className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 "
                       aria-label="Get in touch via email"
@@ -548,11 +548,10 @@ export default function Page() {
                     }
                   </p>
                   <p className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
-                    Currently available for freelance work and full‑time
-                    opportunities
+                    I design, build, and ship fast
                   </p>
                   <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                    Response time: Usually within 24 hours
+                    Response time: Usually within  24 hours
                   </p>
                 </FadeInText>
 
@@ -561,14 +560,14 @@ export default function Page() {
             </SlideUp>
           </div>
         </article>
-        <div className="mt-8 flex justify-center rounded-xl py-2  border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 ">
-          <p className="text-xs text-neutral-500 dark:text-neutral-400 section-lines p-2">
-            <span className="italic">Your life is the most important project you will ever work on <br />~pratham</span> <span aria-hidden> </span>
-          </p>
+        <div className="mt-8 flex justify-center rounded-xl py-2  border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 text-xs text-neutral-500 dark:text-neutral-400 section-lines p-2 ">
+          
+            <span className="italic ">The people who are crazy enough to think they can change the world are <br /> the ones who do</span> <span aria-hidden> </span>
+          
         </div>{" "}
         <div className="mt-4 flex justify-center text-xs text-neutral-500 dark:text-neutral-400">
-        •   
-      designed and developed by&nbsp;<a href="https://x.com/insanekrishnaa" className="text-blue-400 hover:text-blue-500"> ~Pratham Krishna Yadav</a>
+           
+      designed and developed by&nbsp;<a href="https://x.com/insanekrishnaa" className="text-blue-400 hover:text-blue-500"> ~Pratham Yadav</a>
       </div>
         
       </div>
