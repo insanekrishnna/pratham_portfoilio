@@ -68,9 +68,14 @@ export function ProjectListItem({
           </div>
         </header>
 
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
+        <ul className="mt-3 grid gap-2 text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
           {bullets.map((b, i) => (
-            <li key={i}>{b}</li>
+            <li
+              key={i}
+              className="rounded-md border border-neutral-200/60 bg-neutral-50/40 px-3 py-2 text-neutral-700 dark:border-neutral-800/60 dark:bg-neutral-900/40 dark:text-neutral-300"
+            >
+              {b}
+            </li>
           ))}
         </ul>
 

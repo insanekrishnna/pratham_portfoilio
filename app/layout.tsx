@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import StructuredData from "@/components/structured-data";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { CursorToy } from "@/components/cursor-toy";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -160,7 +161,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="min-h-dvh">{children}</div>
+            <div className="min-h-dvh">
+              {children}
+              <CursorToy />
+            </div>
           </ThemeProvider>
         </ErrorBoundary>
       </body>

@@ -193,6 +193,13 @@
   .dark .section-lines {
     border-color: rgba(107, 114, 128, 0.18);
   }
+  .section-divider {
+    border-top: 1px solid rgba(156, 163, 175, 0.18);
+  }
+
+  .dark .section-divider {
+    border-top-color: rgba(107, 114, 128, 0.18);
+  }
 
   .text-muted {
     color: rgb(107 114 128); /* neutral-500 */
@@ -208,5 +215,29 @@
   }
   .bg-accent {
     background-color: rgb(37 99 235);
+  }
+}
+
+#cursor-toy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+}
+
+@media (pointer: coarse) {
+  #cursor-toy {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cursor-toy {
+    display: none;
   }
 }

@@ -72,7 +72,7 @@ export default function Page() {
             {/* Header */}
 
             <SlideUp>
-              <header id="about" className="space-y-2 section-lines p-4">
+              <header id="about" className="space-y-2 p-4">
                 <FadeInText delay={0.1}>
                   <div className="flex items-center justify-between">
                     <TextShimmer
@@ -214,7 +214,7 @@ export default function Page() {
             <FadeInText delay={0.7}>
               <section className="mt-4 m-2 justify-center items-center text-[13px] leading-6 text-neutral-600 dark:text-neutral-300">
                 <p>
-                  TL;DR: i break things, learn fast, and make shit happen. limits exist to be tested ;polymath thinking and psychology and great books shaped me. Mastery is non-negotiable.{" "}
+                  TL;DR: i break things, learn fast, and make shit happen. limits exist to be tested; polymath thinking and psychology books shaped me. <br />Mastery is non-negotiable.{" "}
                   
                 </p>
               </section>
@@ -222,9 +222,9 @@ export default function Page() {
 
             {/* Work Experience */}
             <SlideUp delay={0.1}>
-              <section id="experience" className="mt-4   p-4">
+              <section id="experience" className="mt-4 p-4 section-divider pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-neutral-900 dark:text-neutral-50 ml-0.4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold  tracking-[0.05em] text-neutral-900 dark:text-neutral-50 ml-0.4">
                     Experience
                   </h3>
                 </FadeInText>
@@ -236,7 +236,7 @@ export default function Page() {
                       role="SWE Intern ( ~6mos )" 
                       period="August 2025 – Present"
                       bullets={[
-                        "Conducted an in-depth GPT-4 vs Grok-4 benchmark for multi-agent legal systems, evaluating 10+ criteria across agent design, RAG effectiveness, multimodality, and legal reasoning.",
+                        "Designed an in-depth GPT-4 vs Grok-4 benchmark for across 10+ criteria  RAG effectiveness, multimodality, and legal reasoning.",
                         "Built a scalable QA and testing framework covering 20+ legal task types.",
                         "Presented 30+ improved approaches for reliable, production-grade AI workflows."
                       ]}
@@ -265,9 +265,9 @@ export default function Page() {
 
             {/* Projects */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-3 p-4">
+              <section id="projects" className="mt-3 p-4 section-divider pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
                     Proof of Work
                   </h3>
                 </FadeInText>
@@ -287,9 +287,8 @@ export default function Page() {
                         },
                       ]}
                       bullets={[
-                        "Production-grade backend architecture with modular design, middleware abstraction, and scalable MVC patterns.",
-                        "Secure authentication system using PassportJS, session handling, and environment-driven configuration management.",
-                        "Robust request validation and error control using Joi schemas ensuring reliability and API safety.",
+                        "India’s fragmented rental market lacks trust and transparency; Kovaa centralizes verified listings and streamlines discovery, powered by a production-ready backend focused on security, scalability, correctness, strong validation, and predictable failure handling.",
+                       
                       ]}
                       tags={[ "TypeScript", "TailwindCSS", "mongoDB", "ExpressJS", "NodeJS"]}
                     />
@@ -312,9 +311,8 @@ export default function Page() {
                         },
                       ]}
                       bullets={[
-                        "Modern TypeScript React architecture using Vite, scalable patterns, strict linting.",
-                        "Accessible design system built with shadcn, Radix primitives, Tailwind utilities.",
-                        "Type-safe forms, validation, and data handling using Zod, React Query.",
+                        "Finveda helps users track income and spending through visual breakdowns, period comparisons, and insights, with goal-based planning, built as an accessible React application with strict TypeScript patterns and scalable UI architecture using Zod and React Query.",
+                      
                       ]}
                       tags={["TypeScript",
                               "React",
@@ -343,15 +341,15 @@ export default function Page() {
 
                {/* Skills */}
             <SlideUp delay={0.3}>
-              <section className="mt-5 section-lines p-4">
+              <section className="mt-3 p-4 section-divider pt-5">
                 <SkillsDraggable />
               </section>
             </SlideUp>
 
             <SlideUp delay={0.3}>
-              <section id="achievements" className="mt-4 p-3">
+              <section id="achievements" className="mt-3 p-3 section-divider pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage mb-6 text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-100 ml-1">
+                  <h3 className="font-bricolage mb-6 text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em]text-neutral-900 dark:text-neutral-100 ml-1">
                     Achievements
                   </h3>
                 </FadeInText>
@@ -392,9 +390,9 @@ export default function Page() {
               </section>
             </SlideUp> */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-8  p-3">
+              <section id="projects" className="mt-4 p-3 section-divider pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3 ml-1">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3 ml-1">
                     Blogs
                   </h3>
                 </FadeInText>
@@ -442,9 +440,9 @@ export default function Page() {
 
             {/* Education */}
             <SlideUp delay={0.3}>
-              <section className="mt-3  p-3">
+              <section className="mt-3 p-3 section-divider pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3">
                     Education
                   </h3>
                 </FadeInText>
@@ -466,7 +464,7 @@ export default function Page() {
 
             {/* Get in Touch */}
             <SlideUp delay={0.3}>
-              <section className="mt-4 text-center section-lines p-5 m-3 box-shadow-sm rounded-xl  ">
+              <section className="mt-4 text-center p-5 m-3 box-shadow-sm rounded-xl section-divider pt-6">
                 <FadeInText delay={0.1}>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
                     Still reading? That means something clicked <br /> Let’s talk. <br />
@@ -546,7 +544,7 @@ export default function Page() {
             </SlideUp>
           </div>
         </article>
-        <div className="mt-8 flex justify-center rounded-xl py-2  border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 text-xs text-neutral-500 dark:text-neutral-400 section-lines p-2 ">
+        <div className="mt-8 flex justify-center rounded-xl py-2  border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 text-xs text-neutral-500 dark:text-neutral-400 p-2 ">
           
             <span className="italic ">The people who are crazy enough to think they can change the world are <br /> the ones who do</span> <span aria-hidden> </span>
           

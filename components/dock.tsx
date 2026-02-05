@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Code2,
 } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Dock() {
   const items = [
@@ -24,28 +25,29 @@ export function Dock() {
     <div className="pointer-events-auto fixed inset-x-0 bottom-8 z-50 flex justify-center px-4">
       <nav
         aria-label="Quick actions"
-        className="flex items-center gap-3 rounded-full border border-neutral-300/20 bg-white/10 dark:bg-neutral-900/20 px-4 py-2.5 backdrop-blur-md shadow-lg hover:shadow-xl transition-shadow"
+        className="flex items-center rounded-full border border-neutral-200/80 bg-white/90 px-3 py-2 backdrop-blur-md shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] dark:border-neutral-800/80 dark:bg-neutral-950/90 dark:shadow-[0_10px_30px_-12px_rgba(0,0,0,0.6)]"
       >
         {items.map((item, index) => (
-          <a
-            key={item.label}
-            href={item.href}
-            target={item.href.startsWith("http") ? "_blank" : undefined}
-            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="group relative inline-flex items-center justify-center rounded-lg p-2 text-neutral-600 dark:text-neutral-400 transition-all duration-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50"
-            style={{
-              animation: `slideIn 0.4s ease-out ${index * 0.05}s both`
-            }}
-          >
-            <item.icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-            <span className="sr-only">{item.label}</span>
-            
-            {/* Tooltip */}
-            <span className="absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-neutral-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-              {item.label}
-            </span>
-          </a>
+          <div key={item.label} className="flex items-center">
+            <a
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="group relative inline-flex items-center justify-center rounded-full p-2 text-neutral-700 transition-colors duration-200 hover:text-neutral-900 transition-transform active:scale-90 dark:text-neutral-200 dark:hover:text-white"
+              style={{
+                animation: `slideIn 0.4s ease-out ${index * 0.05}s both`
+              }}
+            >
+              <item.icon className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only">{item.label}</span>
+            </a>
+            {index < items.length - 1 ? (
+              <span className="mx-2 h-5 w-px bg-neutral-200/80 dark:bg-neutral-800/80" aria-hidden />
+            ) : null}
+          </div>
         ))}
+        <span className="mx-2 h-5 w-px bg-neutral-200/80 dark:bg-neutral-800/80" aria-hidden />
+        <ThemeToggle className="h-8 w-8 rounded-full border border-neutral-200/80 bg-white text-neutral-700 shadow-none hover:bg-neutral-100 hover:text-neutral-900 transition-transform active:scale-90 focus-visible:ring-neutral-300 dark:border-neutral-800/80 dark:bg-neutral-950 dark:text-neutral-200 dark:hover:bg-neutral-900 dark:hover:text-white dark:focus-visible:ring-neutral-700" />
       </nav>
       
       <style jsx>{`

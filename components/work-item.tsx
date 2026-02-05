@@ -57,7 +57,7 @@ export function WorkItem({
                 company
               )}
             </h4>
-            <span className="text-xs rounded-md border border-neutral-200 bg-neutral-50 px-1.5 py-1 text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 whitespace-nowrap flex-shrink-0 self-start">
+            <span className="text-[10px] rounded-md border border-neutral-200/70 bg-neutral-50/60 px-1.5 py-0.5 text-neutral-500/80 dark:border-neutral-800/70 dark:bg-neutral-900/60 dark:text-neutral-400/80 whitespace-nowrap flex-shrink-0 self-start">
               {period}
             </span>
           </div>
