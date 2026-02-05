@@ -224,8 +224,8 @@ export default function Page() {
             <SlideUp delay={0.1}>
               <section id="experience" className="mt-4   p-4">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 ml-0.4">
-                    Work Experience.
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-neutral-900 dark:text-neutral-50 ml-0.4">
+                    Experience
                   </h3>
                 </FadeInText>
                 <div className="mt-3 space-y-3">
@@ -267,7 +267,7 @@ export default function Page() {
             <SlideUp delay={0.2}>
               <section id="projects" className="mt-3 p-4">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
                     Proof of Work
                   </h3>
                 </FadeInText>

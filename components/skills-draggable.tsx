@@ -48,12 +48,16 @@ export function SkillsDraggable() {
   ];
 
   return (
+    
     <div className="group">
+      
       {/* Header */}
+      
       <div className="mb-2 flex items-center justify-between">
-        <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-slate-900 dark:text-slate-100">
+         <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-slate-900 dark:text-slate-100">
           Skills
         </h3>
+       
 
        
       </div>
