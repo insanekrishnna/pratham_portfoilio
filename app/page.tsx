@@ -98,7 +98,7 @@ export default function Page() {
                     <h1 className="text-2xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
                       Pratham Yadav
                       <br />
-                     <p className="flex flex-wrap items-center mt-1 gap-5 sm:gap-6 text-xs text-neutral-600 dark:text-neutral-400">aka insanekrishnaa</p>
+                     <p className="flex flex-wrap items-center mt-1 gap-5 sm:gap-6 text-xs text-neutral-600 dark:text-neutral-400">aka insanekrishnna</p>
                     </h1>
                    
                   </div>
@@ -214,18 +214,15 @@ export default function Page() {
             <FadeInText delay={0.7}>
               <section className="mt-4 m-2 justify-center items-center text-[13px] leading-6 text-neutral-600 dark:text-neutral-300">
                 <p>
-                  TL;DR: Full-Stack Software Engineer building scalable, production-grade systems at early-stage startups.{" "}
-                  <span className="rounded bg-yellow-200 px-1.5 py-0.5 text-[12px] font-medium text-neutral-900">
-                    Experienced in end-to-end ownership, system design, backend services, frontend applications,
-                  </span>{" "}
-                   and taking products from architecture to production.
+                  TL;DR: i break things, learn fast, and make shit happen.limits exist to be tested ;polymath thinking and psychology and great books shaped me. Mastery is non-negotiable.{" "}
+                  
                 </p>
               </section>
             </FadeInText>
 
             {/* Work Experience */}
-            <SlideUp delay={0.5}>
-              <section id="experience" className="mt-6 section-lines p-4">
+            <SlideUp delay={0.1}>
+              <section id="experience" className="mt-4  p-4">
                 <FadeInText delay={0.1}>
                   <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
                     Work Experience.
