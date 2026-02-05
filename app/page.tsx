@@ -214,7 +214,7 @@ export default function Page() {
             <FadeInText delay={0.7}>
               <section className="mt-4 m-2 justify-center items-center text-[13px] leading-6 text-neutral-600 dark:text-neutral-300">
                 <p>
-                  TL;DR: i break things, learn fast, and make shit happen.limits exist to be tested ;polymath thinking and psychology and great books shaped me. Mastery is non-negotiable.{" "}
+                  TL;DR: i break things, learn fast, and make shit happen. limits exist to be tested ;polymath thinking and psychology and great books shaped me. Mastery is non-negotiable.{" "}
                   
                 </p>
               </section>
@@ -222,9 +222,9 @@ export default function Page() {
 
             {/* Work Experience */}
             <SlideUp delay={0.1}>
-              <section id="experience" className="mt-4  p-4">
+              <section id="experience" className="mt-4   p-4">
                 <FadeInText delay={0.1}>
-                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 ml-0.4">
                     Work Experience.
                   </h3>
                 </FadeInText>
@@ -265,9 +265,9 @@ export default function Page() {
 
             {/* Projects */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-8 section-lines p-4">
+              <section id="projects" className="mt-3 p-4">
                 <FadeInText delay={0.1}>
-                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50 mb-4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
                     Proof of Work
                   </h3>
                 </FadeInText>
@@ -349,9 +349,9 @@ export default function Page() {
             </SlideUp>
 
             <SlideUp delay={0.3}>
-              <section id="achievements" className="mt-10 p-4">
+              <section id="achievements" className="mt-4 p-3">
                 <FadeInText delay={0.1}>
-                  <h3 className="mb-6 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+                  <h3 className="font-bricolage mb-6 text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-100 ml-1">
                     Achievements
                   </h3>
                 </FadeInText>
@@ -392,9 +392,9 @@ export default function Page() {
               </section>
             </SlideUp> */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-8 section-lines p-4">
+              <section id="projects" className="mt-8  p-3">
                 <FadeInText delay={0.1}>
-                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50 mb-4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3 ml-1">
                     Blogs
                   </h3>
                 </FadeInText>
@@ -405,6 +405,10 @@ export default function Page() {
                     image="Mahabharat.jpg"
                       links={[
                         {
+                          label: "December 19",
+                          href: "https://medium.com/@iiprathamyadav/the-mahabharata-isnt-about-war-it-s-about-mentorship-82dcbf23e018",
+                        },
+                        {
                           label: "Read ↗",
                           href: "https://medium.com/@iiprathamyadav/the-mahabharata-isnt-about-war-it-s-about-mentorship-82dcbf23e018",
                         },
@@ -414,11 +418,9 @@ export default function Page() {
                         },
                       ]}
                       bullets={[
-                        "Understanding why 'Mahabharata' isn’t a story about war, It's a warning about guidance.",
+                        
                       ]}
-                      tags={["Philosophy",
-                        "Mentor",
-                        "Mahabharata",
+                      tags={[
                               ]}
                     />
                   </SlideInLeft>
@@ -440,9 +442,9 @@ export default function Page() {
 
             {/* Education */}
             <SlideUp delay={0.3}>
-              <section className="mt-8 section-lines p-4">
+              <section className="mt-3  p-3">
                 <FadeInText delay={0.1}>
-                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50 mb-4">
+                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold uppercase tracking-[0.18em] text-neutral-900 dark:text-neutral-50 mb-3">
                     Education
                   </h3>
                 </FadeInText>
@@ -456,22 +458,15 @@ export default function Page() {
                       />
                     </li>
                   </SlideInLeft>
-                  <SlideInRight delay={0.1}>
-                    <li>
-                      <AchievementItem
-                        title="Vidya Varidhee Bal Vinay Mandir H. S. School"
-                        date="2022 – 2023"
-                        description="Class XII ( MPBSE ) - 90%"
-                      />
-                    </li>
-                  </SlideInRight>
+                 
+                    
                 </ul>
               </section>
             </SlideUp>
 
             {/* Get in Touch */}
             <SlideUp delay={0.3}>
-              <section className="mt-8 text-center section-lines p-6">
+              <section className="mt-4 text-center section-lines p-5 m-3 box-shadow-sm rounded-xl  ">
                 <FadeInText delay={0.1}>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
                     Still reading? That means something clicked <br /> Let’s talk. <br />
@@ -480,25 +475,19 @@ export default function Page() {
                    
                   </h2>
                 </FadeInText>
-                <FadeInText delay={0.1}>
-                  <p className="mx-auto mt-2 max-w-xl text-xs text-neutral-500 dark:text-neutral-200">
-                    {
-                      "tldr; i write code"
-                    }
-                  </p>
-                </FadeInText>
+                
 
                 {/* CTAs */}
                 <SlideInLeft delay={0.1}>
                   
-                  <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                  <div className="mt-2 flex flex-wrap items-center justify-center gap-1 sm:gap-2">
                     <a
                       href="mailto:iiprathamyadav@gmail.com"
                       target="_blank"
                       className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 "
                       aria-label="Get in touch via email"
                     >
-                      <Mail className="h-4 w-4" />
+                      <Mail className="h-4 w-4 bg-light" />
                       <span>Get in touch</span>
                     </a>
                     
