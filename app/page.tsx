@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, MessageCircle, Calendar } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Calendar, ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -11,7 +11,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
-import { WorkItem } from "@/components/work-item";
 import { ProjectListItem } from "@/components/project-list-item";
 import { AchievementCard, AchievementItem } from "@/components/achievement-item";
 import { Dock } from "@/components/dock";
@@ -28,6 +27,35 @@ import {
 } from "@/components/scroll-animation";
 
 export default function Page() {
+  const experienceItems = [
+    {
+      icon: "shield",
+      company: "Largence",
+      role: "SWE Intern ( ~6mos )",
+      period: "August 2025 - Present",
+      bullets: [
+        "Designed an in-depth GPT-4 vs Grok-4 benchmark for across 10+ criteria  RAG effectiveness,multimodality and legal reasoning.",
+        "Built a scalable QA and testing framework covering 20+ legal task types.",
+        "Presented 30+ improved approaches for reliable, production-grade AI workflows.",
+      ],
+      logoUrl: "/stealth.jpeg",
+      companyUrl: "https://largence.com",
+    },
+    {
+      icon: "building",
+      company: "Genius HRTech LTD.",
+      role: "Operation Fellow ( 1yr 5mos )",
+      period: "January 2024 – June 2025",
+      bullets: [
+        "Led 12-member team, increasing productivity by 30–40% through execution discipline.",
+        "Reduced negative client feedback by ~30% via process improvements and quality controls.",
+        "Streamlined operations, saving 20+ hours per week through workflow optimization.",
+      ],
+      logoUrl: "/GHRTT.jpeg",
+      companyUrl: "https://www.geniushrtech.com/",
+    },
+  ]
+
   return (
     <main className="min-h-dvh bg-grid pb-32 pt-6 dark:bg-neutral-950">
       <FadeInText>
@@ -82,7 +110,7 @@ export default function Page() {
                       duration={2.2}
                       spread={1.2}
                     >
-                      hello, I’m
+                      Hola ! I'm
                     </TextShimmer>
                     <TimeCounter className="text-xs text-neutral-500 dark:text-neutral-400 font-mono" />
                   </div>
@@ -221,7 +249,7 @@ export default function Page() {
               </section>
             </FadeInText>
 
-            {/* Work Experience */}
+                                    {/* Work Experience */}
             <SlideUp delay={0.1}>
               <section id="experience" className="mt-4 p-4 section-divider pt-5">
                 <FadeInText delay={0.1}>
@@ -229,37 +257,54 @@ export default function Page() {
                     Experience
                   </h3>
                 </FadeInText>
-                <div className="mt-3 space-y-3">
-                  <SlideInLeft delay={0.1}>
-                    <WorkItem
-                      icon="shield"
-                      company="Largence"
-                      role="SWE Intern ( ~6mos )" 
-                      period="August 2025 – Present"
-                      bullets={[
-                        "Designed an in-depth GPT-4 vs Grok-4 benchmark for across 10+ criteria  RAG effectiveness, multimodality, and legal reasoning.",
-                        "Built a scalable QA and testing framework covering 20+ legal task types.",
-                        "Presented 30+ improved approaches for reliable, production-grade AI workflows."
-                      ]}
-                      logoUrl="/stealth.jpeg"
-                      companyUrl="https://largence.com"
-                    />
-                  </SlideInLeft>
-                  <SlideInLeft delay={0.1}>
-                    <WorkItem
-                      icon="building"
-                      company="Genius HRTech LTD."
-                      role="Operation Fellow ( 1yr 5mos )"
-                      period="January 2024 – June 2025"
-                      bullets={[
-                        "Led 12-member team, increasing productivity by 30–40% through execution discipline.",
-                        "Reduced negative client feedback by ~30% via process improvements and quality controls.",
-                        "Streamlined operations, saving 20+ hours per week through workflow optimization."
-                      ]}
-                      logoUrl="/GHRTT.jpeg"
-                      companyUrl="https://www.geniushrtech.com/"
-                    />
-                  </SlideInLeft>
+
+                <div className="experience-list mt-3 space-y-2">
+                  {experienceItems.map(item => (
+                    <div key={item.company} className="experience-item">
+                      <div className="experience-row">
+                        <div className="experience-left">
+                          <div className="experience-logo">
+                            <img
+                              src={item.logoUrl}
+                              alt={`${item.company} logo`}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                          <div className="experience-text">
+                            <p className="experience-company">
+                              {item.companyUrl ? (
+                                <a
+                                  href={item.companyUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="hover:underline"
+                                >
+                                  {item.company}
+                                </a>
+                              ) : (
+                                item.company
+                              )}
+                            </p>
+                            <p className="experience-role">{item.role}</p>
+                          </div>
+                        </div>
+                        <div className="experience-right">
+                          <span className="experience-period">{item.period}</span>
+                          <span className="exp-chevron-wrap" aria-hidden="true">
+                            <ChevronDown className="exp-chevron" />
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="experience-details">
+                        <ul className="experience-bullets">
+                          {item.bullets.map((bullet, index) => (
+                            <li key={`${item.company}-${index}`}>{bullet}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </section>
             </SlideUp>
@@ -467,14 +512,14 @@ export default function Page() {
             <SlideUp delay={0.3}>
               <section
                 id="book-a-meet"
-                className="mt-4 rounded-xl border border-neutral-200 bg-neutral-50/70 p-5 text-left dark:border-neutral-800 dark:bg-neutral-900/30"
+                className="mt-4 rounded-xl  border-neutral-200 bg-neutral-50/70 p-5 text-left dark:border-neutral-800 dark:bg-neutral-900/30"
               >
                 <FadeInText delay={0.1}>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
-                    Say hello.
+                    Still reading? That means something clicked. <br />Let’s talk.
                   </h2>
                   <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
-                    X DM is recommended. For longer messages, email works great.
+                    
                   </p>
                 </FadeInText>
 
@@ -533,6 +578,9 @@ export default function Page() {
     </main>
   );
 }
+
+
+
 
 
 

@@ -158,6 +158,157 @@
 }
 
 @layer utilities {
+  @keyframes exp-chevron-bounce {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(4px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+  }
+
+  .experience-item {
+    border: 1px solid rgb(226 232 240 / 0.7);
+    background: rgb(255 255 255 / 0.8);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .dark .experience-item {
+    border-color: rgb(30 41 59 / 0.7);
+    background: rgb(3 7 18 / 0.5);
+  }
+
+  .experience-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .experience-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .experience-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgb(226 232 240 / 0.8);
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  .dark .experience-logo {
+    border-color: rgb(30 41 59 / 0.9);
+    background: #0b0f1a;
+  }
+
+  .experience-text {
+    min-width: 0;
+  }
+
+  .experience-company {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(15 23 42);
+  }
+
+  .dark .experience-company {
+    color: rgb(248 250 252);
+  }
+
+  .experience-role {
+    margin-top: 2px;
+    font-size: 0.78rem;
+    color: rgb(100 116 139);
+  }
+
+  .dark .experience-role {
+    color: rgb(148 163 184);
+  }
+
+  .experience-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .experience-period {
+    font-size: 0.7rem;
+    color: rgb(148 163 184);
+    white-space: nowrap;
+  }
+
+  .dark .experience-period {
+    color: rgb(148 163 184 / 0.85);
+  }
+
+  .exp-chevron-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: exp-chevron-bounce 1.6s ease-in-out infinite;
+    color: rgb(100 116 139);
+  }
+
+  .dark .exp-chevron-wrap {
+    color: rgb(148 163 184);
+  }
+
+  .exp-chevron {
+    height: 16px;
+    width: 16px;
+    transition: transform 0.35s ease;
+    transform-origin: center;
+  }
+
+  .experience-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease,
+      margin-top 0.35s ease;
+  }
+
+  .experience-item:hover .experience-details {
+    max-height: 260px;
+    opacity: 1;
+    margin-top: 8px;
+  }
+
+  .experience-item:hover .exp-chevron-wrap {
+    animation: none;
+  }
+
+  .experience-item:hover .exp-chevron {
+    transform: rotate(180deg);
+  }
+
+  .experience-bullets {
+    display: grid;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: rgb(71 85 105);
+  }
+
+  .dark .experience-bullets {
+    color: rgb(148 163 184);
+  }
+
   .bg-grid {
     /* use variables so theme flips without duplicating selectors */
     background-color: var(--grid-bg);

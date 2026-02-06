@@ -12,7 +12,7 @@ function SkillPill({ label }: Skill) {
     <motion.div
       className={cn(
         "relative select-none",
-        "inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium",
+       "inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium",
         "bg-white text-neutral-700 border-neutral-300",
         "dark:bg-neutral-950 dark:text-neutral-300 dark:border-neutral-700"
       )}
