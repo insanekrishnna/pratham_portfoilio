@@ -40,10 +40,23 @@ export async function POST(request: Request) {
   const rawFrom = process.env.SMTP_FROM || user
   const to = process.env.CONTACT_TO || "iiprathamyadav@gmail.com"
   const isDev = process.env.NODE_ENV !== "production"
+  const isPortValid = Number.isFinite(port) && port > 0
 
-  if (!host || !port || !user || !pass || !rawFrom) {
+  const missing = [
+    !host && "SMTP_HOST",
+    !isPortValid && "SMTP_PORT",
+    !user && "SMTP_USER",
+    !pass && "SMTP_PASS",
+    !rawFrom && "SMTP_FROM",
+  ].filter(Boolean)
+
+  if (missing.length > 0) {
     return NextResponse.json(
-      { error: "Email service is not configured." },
+      {
+        error: isDev
+          ? `Email service is not configured: ${missing.join(", ")}.`
+          : "Email service is not configured.",
+      },
       { status: 500 }
     )
   }
