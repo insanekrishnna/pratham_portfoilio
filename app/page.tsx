@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -462,84 +462,42 @@ export default function Page() {
               </section>
             </SlideUp>
 
-            {/* Get in Touch */}
+                        {/* Book a Meet */}
             <SlideUp delay={0.3}>
-              <section className="mt-4 text-center p-5 m-3 box-shadow-sm rounded-xl section-divider pt-6">
+              <section id="book-a-meet" className="mt-4 rounded-xl border border-neutral-200 bg-neutral-50/70 p-5 dark:border-neutral-800 dark:bg-neutral-900/30">
                 <FadeInText delay={0.1}>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
-                    Still reading? That means something clicked <br /> Let’s talk. <br />
-                    
-                    
-                   
+                    Still reading? That means something clicked <br />
+Let’s talk.
                   </h2>
-                </FadeInText>
-                
-
-                {/* CTAs */}
-                <SlideInLeft delay={0.1}>
-                  
-                  <div className="mt-2 flex flex-wrap items-center justify-center gap-1 sm:gap-2">
-                    <a
-                      href="mailto:iiprathamyadav@gmail.com"
-                      target="_blank"
-                      className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 "
-                      aria-label="Get in touch via email"
-                    >
-                      <Mail className="h-4 w-4 bg-light" />
-                      <span>Get in touch</span>
-                    </a>
-                    
-                  </div>
-                  
-                </SlideInLeft>
-
-                {/* Social row */}
-                <SlideInRight delay={0.1}>
-                  <div className="mt-4 flex items-center justify-center gap-2 sm:gap-4 text-neutral-600 dark:text-neutral-300">
-                    <a
-                      href="https://x.com/insanekrishnaa"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Twitter"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
-                    >
-                      <Twitter className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="https://github.com/insanekrishnna"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
-                    >
-                      <Github className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/prathamyadavv/"
-                      aria-label="Open LinkedIn"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                  </div>
-                </SlideInRight>
-
-                {/* Availability + response time */}
-                <FadeInText delay={0.1}>
-                   <p className="mx-auto mt-2 max-w-xl text-xs text-neutral-500 dark:text-neutral-200 rounded  px-2 py-1 inline-block border border-blue-200/20">
-                    {
-                      "x dm is recommended "
-                    }
-                  </p>
-                  <p className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
-                    I design, build, and ship fast
-                  </p>
-                  <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                    Response time: Usually within  24 hours
+                  <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
+                    A focused 30-minute call to align on scope, fit, and next steps.
                   </p>
                 </FadeInText>
 
-                {/* Divider before footer */}
+                <div className="mt-4">
+                  <a
+                    href="https://calendly.com/iiprathamyadav/30min"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 sm:w-auto"
+                    aria-label="Book a 30-minute meeting on Calendly"
+                  >
+                    <Calendar className="h-4 w-4" />
+                    Book a  Meet
+                  </a>
+                 
+                  <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+                    Scheduled via email on{" "}
+                    <span className="font-medium">iiprathamyadav@gmail.com</span>.
+                  </p>
+                  <a
+                    href="mailto:iiprathamyadav@gmail.com"
+                    className="mt-2 inline-flex text-xs text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
+                  >
+                    or email -&gt; iiprathamyadav@gmail.com
+                  </a>
+                </div>
               </section>
             </SlideUp>
           </div>
@@ -562,3 +520,4 @@ export default function Page() {
     </main>
   );
 }
+
