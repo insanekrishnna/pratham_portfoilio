@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import StructuredData from "@/components/structured-data";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { CursorToy } from "@/components/cursor-toy";
+import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -161,6 +162,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <LenisSmoothScroll />
             <div className="min-h-dvh">
               {children}
               <CursorToy />

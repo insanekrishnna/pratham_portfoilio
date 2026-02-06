@@ -47,6 +47,7 @@
     "framer-motion": "latest",
     "geist": "^1.3.1",
     "input-otp": "1.4.1",
+    "lenis": "^1.3.17",
     "lucide-react": "^0.454.0",
     "motion": "^12.23.24",
     "next": "15.2.8",
