@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, MessageCircle, Calendar } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -18,6 +18,7 @@ import { Dock } from "@/components/dock";
 import { SkillsDraggable } from "@/components/skills-draggable";
 import { GitHubContributions } from "@/components/github-contributions";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ContactForm } from "@/components/contact-form";
 import {
   ScrollAnimation,
   FadeInText,
@@ -462,19 +463,18 @@ export default function Page() {
               </section>
             </SlideUp>
 
-                                    {/* Book a Meet */}
+                                                {/* Book a Meet */}
             <SlideUp delay={0.3}>
               <section
                 id="book-a-meet"
-                className="mt-4 rounded-xl  border-neutral-200  p-5 text-left dark:border-neutral-800 dark:bg-neutral-900/30"
+                className="mt-4 rounded-xl border border-neutral-200 bg-neutral-50/70 p-5 text-left dark:border-neutral-800 dark:bg-neutral-900/30"
               >
                 <FadeInText delay={0.1}>
                   <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
-                    Still reading? That means something clicked <br />
-Let’s talk.
+                    Say hello.
                   </h2>
                   <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
-                    
+                    X DM is recommended. For longer messages, email works great.
                   </p>
                 </FadeInText>
 
@@ -483,7 +483,7 @@ Let’s talk.
                     href="https://calendly.com/iiprathamyadav/30min"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md bg-emerald-400 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-emerald-300"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-emerald-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-emerald-200"
                     aria-label="Book a 30-minute meeting on Calendly"
                   >
                     <Calendar className="h-4 w-4" />
@@ -493,7 +493,7 @@ Let’s talk.
                     href="https://x.com/insanekrishnaa"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md bg-sky-400 px-4 py-2 text-sm font-medium text-white hover:bg-sky-400"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-400"
                     aria-label="DM on X"
                   >
                     <Twitter className="h-4 w-4" />
@@ -505,42 +505,10 @@ Let’s talk.
                   <p className="text-sm font-medium text-neutral-900 dark:text-neutral-50">
                     you can mail also
                   </p>
-                  <form
-                    className="mt-3 grid gap-3"
-                    action="mailto:iiprathamyadav@gmail.com"
-                    method="POST"
-                    encType="text/plain"
-                  >
-                    <label className="grid gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-                      Your Email
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="johndoe69@xyz.com"
-                        className="h-10 rounded-md border border-neutral-200 bg-transparent px-3 text-sm text-neutral-900 outline-none transition focus:border-neutral-400 dark:border-neutral-800 dark:text-neutral-100"
-                      />
-                    </label>
-                    <label className="grid gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-                      Your message
-                      <textarea
-                        name="message"
-                        required
-                        rows={4}
-                        placeholder="Type your message here."
-                        className="min-h-[120px] rounded-md border border-neutral-200 bg-transparent px-3 py-2 text-sm text-neutral-900 outline-none transition focus:border-neutral-400 dark:border-neutral-800 dark:text-neutral-100"
-                      />
-                    </label>
-                    <button
-                      type="submit"
-                      className="h-11 w-full rounded-md border border-neutral-200 bg-white text-sm font-medium text-neutral-900 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
-                    >
-                      Send message
-                    </button>
-                  </form>
+                  <ContactForm />
                   <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
                     Messages are directed to{" "}
-                    <span className="font-medium">iiprathamyadav@gmail.com</span>
+                    <span className="font-medium">iiprathamyadav@gmail.com</span>.
                   </p>
                 </div>
               </section>
@@ -565,5 +533,6 @@ Let’s talk.
     </main>
   );
 }
+
 
 
