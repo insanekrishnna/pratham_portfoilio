@@ -347,14 +347,14 @@ export default function Page() {
             </SlideUp>
 
             <SlideUp delay={0.3}>
-              <section id="achievements" className="mt-3 p-3 section-divider pt-5">
+              <section id="achievements" className="mt-3 p-3 section-divider pt-4">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage mb-6 text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em]text-neutral-900 dark:text-neutral-100 ml-1">
+                  <h3 className="font-bricolage mb-4 text-[0.9rem] sm:text-[0.95rem] font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-100 ml-1">
                     Achievements
                   </h3>
                 </FadeInText>
 
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   <SlideInLeft delay={0.1}>
                     <AchievementCard
                       title="Winner — Ideathon 2025 ( CDGI )"
