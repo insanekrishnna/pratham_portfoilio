@@ -55,17 +55,17 @@ export function ProjectListItem({
       ) : null}
       
       <div className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4">
-        <header className="flex flex-col gap-1.5 sm:gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h4 className="text-xs sm:text-sm md:text-base font-semibold text-neutral-900 dark:text-neutral-50">
+        <header className="flex items-start justify-between gap-2 mb-2 sm:mb-2.5">
+          <h4 className="text-xs sm:text-sm md:text-base font-semibold text-neutral-900 dark:text-neutral-50 flex-1">
             {title}
           </h4>
           {hasLinks ? (
-            <div className="flex flex-wrap gap-1 sm:gap-1.5">
-              {links.map(l => (
+            <div className="flex flex-wrap gap-1 sm:gap-1.5 items-center justify-end flex-shrink-0">
+              {links.map((l, idx) => (
                 <a
                   key={l.label}
                   href={l.href}
-                  className="text-[10px] sm:text-xs rounded-full border border-neutral-200 px-2 sm:px-2.5 py-0.5 sm:py-1 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                  className="text-[10px] sm:text-xs rounded-full border border-neutral-200 px-2 sm:px-2.5 py-0.5 sm:py-1 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900 whitespace-nowrap"
                 >
                   {l.label}
                 </a>
@@ -75,7 +75,7 @@ export function ProjectListItem({
         </header>
 
         {hasBullets ? (
-          <ul className="mt-2 sm:mt-3 grid gap-1.5 sm:gap-2 text-xs sm:text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
+          <ul className="mt-3 sm:mt-3.5 grid gap-1.5 sm:gap-2 text-xs sm:text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
             {bullets.map((b, i) => (
               <li
                 key={i}
@@ -88,7 +88,7 @@ export function ProjectListItem({
         ) : null}
 
         {hasTags ? (
-          <div className="mt-2 sm:mt-3 flex flex-wrap gap-1 sm:gap-1.5">
+          <div className="mt-3 sm:mt-3.5 flex flex-wrap gap-1 sm:gap-1.5">
             {tags.map(t => (
               <Chip key={t} variant="soft" tech={t}>
                 {t}

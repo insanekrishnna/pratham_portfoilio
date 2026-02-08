@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail, Calendar, ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextShimmer } from "@/components/ui/text-shimmer";
 import { Typewriter } from "@/components/ui/typewriter";
@@ -158,79 +157,54 @@ export default function Page() {
                   
                 </FadeInText>
                 <SlideInRight delay={0.4}>
-                  <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-4">
-                    <Button
-                      size="sm"
-                      asChild
-                      className="h-8 sm:h-8 md:h-9 rounded-sm bg-neutral-900 px-3 sm:px-4 text-xs sm:text-sm text-white shadow-sm hover:bg-neutral-900/90 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                  <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1TbuyE28E3soWfBA8Npe9wdcEag5B9_E_/view?usp=drivesdk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View Resume"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 text-white px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 whitespace-nowrap"
                     >
-                      <a
-                        href="https://drive.google.com/file/d/1TbuyE28E3soWfBA8Npe9wdcEag5B9_E_/view?usp=drivesdk "
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View Resume"
-                      >
-                        Resume
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      Resume
+                    </a>
+                    <a
+                      href="mailto:iiprathamayadav@gmail.com"
+                      aria-label="Send email"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900 whitespace-nowrap"
                     >
-                      <a
-                        href="mailto:iiprathamayadav@gmail.com"
-                        aria-label="Send email"
-                      >
-                        <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      
+                    </a>
+                    <a
+                      href="https://twitter.com/insanekrishnaa"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open Twitter"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900 whitespace-nowrap"
                     >
-                      <a
-                        href="https://twitter.com/insanekrishnaa"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Open Twitter"
-                      >
-                        <Twitter className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      <Twitter className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      
+                    </a>
+                    <a
+                      href="https://github.com/insanekrishnna"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open GitHub"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900 whitespace-nowrap"
                     >
-                      <a
-                        href="https://github.com/insanekrishnna"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Open GitHub"
-                      >
-                        <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/prathamyadavv/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open LinkedIn"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900 whitespace-nowrap"
                     >
-                      <a
-                        href="https://www.linkedin.com/in/prathamyadavv/"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Open LinkedIn"
-                      >
-                        <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      </a>
-                    </Button>
+                      <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      
+                    </a>
                   </div>
                 </SlideInRight>
               </header>
@@ -541,7 +515,6 @@ export default function Page() {
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-400"
                     aria-label="DM on X"
                   >
-                    <Twitter className="h-4 w-4" />
                     dm on x
                   </a>
                 </div>

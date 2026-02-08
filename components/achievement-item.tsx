@@ -21,17 +21,15 @@ export function AchievementCard({
         {/* left accent rail */}
         <div className="absolute left-0 top-0 h-0 w-[1px] bg-gradient-to-b from-black/80 dark:from-white/60 to-transparent" />
 
-        {/* date badge */}
-        <div className="mb-1.5 sm:mb-2 flex items-center justify-between">
-          <span className="inline-flex rounded-full bg-black/15 dark:bg-white/10 px-2 sm:px-2.5 py-0.5 text-[8px] sm:text-[9px] font-medium text-black/80 dark:text-white/70 border border-black/40 dark:border-white/20">
+        {/* title and date on same line */}
+        <div className="flex items-start justify-between gap-2 mb-1.5 sm:mb-2">
+          <h4 className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors leading-snug flex-1">
+            {title}
+          </h4>
+          <span className="inline-flex rounded-full bg-black/15 dark:bg-white/10 px-2 sm:px-2.5 py-0.5 text-[8px] sm:text-[9px] font-medium text-black/80 dark:text-white/70 border border-black/40 dark:border-white/20 whitespace-nowrap flex-shrink-0">
             {date}
           </span>
         </div>
-
-        {/* title */}
-        <h4 className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors leading-snug">
-          {title}
-        </h4>
 
         {/* description */}
         <p className="mt-1 sm:mt-1.5 text-[10px] sm:text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors">
