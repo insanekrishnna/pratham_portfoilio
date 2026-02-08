@@ -6,9 +6,6 @@ export function NekoCat() {
   useEffect(() => {
     if (typeof window === "undefined") return
 
-    const DESKTOP_QUERY = "(min-width: 768px)"
-    const desktopMedia = window.matchMedia(DESKTOP_QUERY)
-
     let container: HTMLDivElement | null = null
     let rafId: number | null = null
 
@@ -78,41 +75,29 @@ export function NekoCat() {
       mousePos.y = e.clientY + 16
     }
 
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mousePos.x = e.touches[0].clientX - 24
+        mousePos.y = e.touches[0].clientY + 16
+      }
+    }
+
     const startNeko = () => {
       createNeko()
       window.addEventListener("mousemove", onMouseMove, { passive: true })
+      window.addEventListener("touchmove", onTouchMove, { passive: true })
       animate()
     }
 
     const stopNeko = () => {
       destroyNeko()
       window.removeEventListener("mousemove", onMouseMove)
+      window.removeEventListener("touchmove", onTouchMove)
     }
 
-    const sync = () => {
-      if (desktopMedia.matches) {
-        startNeko()
-      } else {
-        stopNeko()
-      }
-    }
-
-    sync()
-
-    const onChange = () => sync()
-
-    if (desktopMedia.addEventListener) {
-      desktopMedia.addEventListener("change", onChange)
-    } else {
-      desktopMedia.addListener(onChange)
-    }
+    startNeko()
 
     return () => {
-      if (desktopMedia.removeEventListener) {
-        desktopMedia.removeEventListener("change", onChange)
-      } else {
-        desktopMedia.removeListener(onChange)
-      }
       stopNeko()
     }
   }, [])
