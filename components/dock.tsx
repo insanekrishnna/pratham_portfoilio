@@ -2,7 +2,6 @@
 
 import {
   Github,
-  Home,
   Mail,
   Linkedin,
   Twitter,
@@ -20,7 +19,7 @@ export function Dock() {
   }, []);
 
   const items = [
-    { icon: Home, label: "Home", href: "#" },
+    { type: "image", label: "Home", href: "#" },
     { icon: Code2, label: "Projects", href: "#projects" },
     { icon: Github, label: "GitHub", href: "https://github.com/insanekrishnna" },
     { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/prathamyadav" },
@@ -36,22 +35,43 @@ export function Dock() {
       >
         {items.map((item, index) => (
           <div key={item.label} className="flex items-center">
-            <a
-              href={item.href}
-              target={item.href.startsWith("http") ? "_blank" : undefined}
-              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative inline-flex items-center justify-center rounded-full p-1.5 sm:p-2 text-neutral-700 transition-colors duration-200 hover:text-neutral-900 active:scale-90 dark:text-neutral-200 dark:hover:text-white"
-              style={
-                !isMobile
-                  ? {
-                      animation: `slideIn 0.4s ease-out ${index * 0.05}s both`,
-                    }
-                  : {}
-              }
-            >
-              <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
-              <span className="sr-only">{item.label}</span>
-            </a>
+            {item.type === "image" ? (
+              <a
+                href={item.href}
+                className="group relative inline-flex items-center justify-center rounded-full p-1.5 sm:p-2 transition-all duration-200 active:scale-90 hover:ring-2 hover:ring-neutral-300 dark:hover:ring-neutral-700"
+                style={
+                  !isMobile
+                    ? {
+                        animation: `slideIn 0.4s ease-out ${index * 0.05}s both`,
+                      }
+                    : {}
+                }
+              >
+                <img
+                  src="/facedemo.jpeg"
+                  alt={item.label}
+                  className="h-6 w-6 sm:h-7 sm:w-7 rounded-full object-cover"
+                />
+                <span className="sr-only">{item.label}</span>
+              </a>
+            ) : (
+              <a
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group relative inline-flex items-center justify-center rounded-full p-1.5 sm:p-2 text-neutral-700 transition-colors duration-200 hover:text-neutral-900 active:scale-90 dark:text-neutral-200 dark:hover:text-white"
+                style={
+                  !isMobile
+                    ? {
+                        animation: `slideIn 0.4s ease-out ${index * 0.05}s both`,
+                      }
+                    : {}
+                }
+              >
+                <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
+                <span className="sr-only">{item.label}</span>
+              </a>
+            )}
             {index < items.length - 1 ? (
               <span className="mx-1 sm:mx-2 h-4 sm:h-5 w-px bg-neutral-200/80 dark:bg-neutral-800/80" aria-hidden />
             ) : null}
