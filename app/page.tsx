@@ -44,7 +44,7 @@ export default function Page() {
     {
       icon: "building",
       company: "Genius HRTech LTD.",
-      role: "Operation Fellow ( 1yr 5mos )",
+      role: "Operation Fellow (1yr 5mos)",
       period: "January 2024 – June 2025",
       bullets: [
         "Led 12-member team, increasing productivity by 30–40% through execution discipline.",
@@ -57,18 +57,18 @@ export default function Page() {
   ]
 
   return (
-    <main className="min-h-dvh bg-grid pb-32 pt-6 dark:bg-neutral-950">
+    <main className="min-h-dvh bg-grid pb-20 sm:pb-24 md:pb-32 pt-4 sm:pt-5 md:pt-6 dark:bg-neutral-950">
       <FadeInText>
-        <nav className="mx-auto mb-4 flex w-full max-w-xl items-center justify-between px-4 md:px-6 lg:px-8 text-xs text-neutral-600 dark:text-neutral-300">
+        <nav className="mx-auto mb-3 sm:mb-4 flex w-full max-w-xl items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 text-xs text-neutral-600 dark:text-neutral-300">
           <Link
             href="#"
-            className="font-semibold text-neutral-900 dark:text-neutral-50"
+            className="font-semibold text-neutral-900 dark:text-neutral-50 text-sm sm:text-base"
           >
             pratham.
           </Link>
 
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <a
               href="#experience"
               className="hover:text-neutral-900 dark:hover:text-neutral-50 text-xs sm:text-xs"
@@ -92,18 +92,18 @@ export default function Page() {
         </nav>
       </FadeInText>
 
-      <div className="mx-auto max-w-xl px-4 md:px-6 lg:px-8">
+      <div className="mx-auto max-w-xl px-3 sm:px-4 md:px-6 lg:px-8">
         <article
           aria-label="Portfolio"
-          className="relative rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950"
+          className="relative rounded-xl sm:rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950"
         >
-          <div className="p-4 md:p-6 lg:p-6">
+          <div className="p-3 sm:p-4 md:p-6 lg:p-6">
             {/* Header */}
 
             <SlideUp>
-              <header id="about" className="space-y-2 p-4">
+              <header id="about" className="space-y-2 p-2 sm:p-3 md:p-4">
                 <FadeInText delay={0.1}>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-2">
                     <TextShimmer
                       as="p"
                       className="text-xs"
@@ -117,17 +117,17 @@ export default function Page() {
                 </FadeInText>
                 <SlideInLeft delay={0.2}>
                   <div className="flex items-center gap-3">
-                    <div className="h-16 w-16 ring-2 ring-neutral-200 dark:ring-neutral-900 rounded-full overflow-hidden">
+                    <div className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 ring-2 ring-neutral-200 dark:ring-neutral-900 rounded-full overflow-hidden flex-shrink-0">
                       <img
                         src="/facedemo.jpeg"
                         alt="Pratham Yadav"
                         className="h-full w-full object-cover scale-115 -translate-x-0.5"
                       />
                     </div>
-                    <h1 className="text-2xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
+                    <h1 className="text-lg sm:text-2xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
                       Pratham Yadav
                       <br />
-                     <p className="flex flex-wrap items-center mt-1 gap-5 sm:gap-6 text-xs text-neutral-600 dark:text-neutral-400">aka insanekrishnna</p>
+                     <p className="flex flex-wrap items-center mt-1 gap-2 sm:gap-5 md:gap-5 text-xs text-neutral-600 dark:text-neutral-400">aka insanekrishnna</p>
                     </h1>
                    
                   </div>
@@ -158,11 +158,11 @@ export default function Page() {
                   
                 </FadeInText>
                 <SlideInRight delay={0.4}>
-                  <div className="mt-5 flex flex-wrap items-center gap-2 sm:gap-4">
+                  <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-4">
                     <Button
                       size="sm"
                       asChild
-                      className="h-6 w-20 rounded-sm bg-neutral-900 px-4 text-white shadow-sm hover:bg-neutral-900/90 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                      className="h-8 sm:h-8 md:h-9 rounded-sm bg-neutral-900 px-3 sm:px-4 text-xs sm:text-sm text-white shadow-sm hover:bg-neutral-900/90 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
                     >
                       <a
                         href="https://drive.google.com/file/d/1TbuyE28E3soWfBA8Npe9wdcEag5B9_E_/view?usp=drivesdk "
@@ -177,20 +177,20 @@ export default function Page() {
                       size="sm"
                       variant="ghost"
                       asChild
-                      className="h-6 w-6 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       <a
                         href="mailto:iiprathamayadav@gmail.com"
                         aria-label="Send email"
                       >
-                        <Mail className="h-4 w-4" />
+                        <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </a>
                     </Button>
                     <Button
                       size="sm"
                       variant="ghost"
                       asChild
-                      className="h-6 w-6 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       <a
                         href="https://twitter.com/insanekrishnaa"
@@ -198,14 +198,14 @@ export default function Page() {
                         rel="noreferrer"
                         aria-label="Open Twitter"
                       >
-                        <Twitter className="h-4 w-4" />
+                        <Twitter className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </a>
                     </Button>
                     <Button
                       size="sm"
                       variant="ghost"
                       asChild
-                      className="h-6 w-6 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       <a
                         href="https://github.com/insanekrishnna"
@@ -213,14 +213,14 @@ export default function Page() {
                         rel="noreferrer"
                         aria-label="Open GitHub"
                       >
-                        <Github className="h-4 w-4" />
+                        <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </a>
                     </Button>
                     <Button
                       size="sm"
                       variant="ghost"
                       asChild
-                      className="h-6 w-6 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="h-8 w-8 sm:h-8 sm:w-8 md:h-9 md:w-9 rounded-sm border border-neutral-200 p-0 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       <a
                         href="https://www.linkedin.com/in/prathamyadavv/"
@@ -228,7 +228,7 @@ export default function Page() {
                         rel="noreferrer"
                         aria-label="Open LinkedIn"
                       >
-                        <Linkedin className="h-4 w-4" />
+                        <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </a>
                     </Button>
                   </div>
@@ -241,7 +241,7 @@ export default function Page() {
 
             {/* Bio */}
             <FadeInText delay={0.7}>
-              <section className="mt-4 m-2 justify-center items-center text-[13px] leading-6 text-neutral-600 dark:text-neutral-300">
+              <section className="mt-3 sm:mt-4 mx-1 sm:mx-2 md:m-2 justify-center items-center text-xs sm:text-sm leading-6 text-neutral-600 dark:text-neutral-300">
                 <p>
                   TL;DR: i break things, learn fast, and make shit happen. limits exist to be tested; polymath thinking and psychology books shaped me. <br />Mastery is non-negotiable.{" "}
                   
@@ -251,14 +251,14 @@ export default function Page() {
 
                                     {/* Work Experience */}
             <SlideUp delay={0.1}>
-              <section id="experience" className="mt-4 p-4 section-divider pt-5">
+              <section id="experience" className="mt-3 sm:mt-4 px-1.5 sm:px-2 md:px-4 py-3 sm:py-4 md:py-5 section-divider">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold  tracking-[0.05em] text-neutral-900 dark:text-neutral-50 ml-0.4">
+                  <h3 className="font-bricolage text-xs sm:text-sm md:text-base font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
                     Experience
                   </h3>
                 </FadeInText>
 
-                <div className="experience-list mt-3 space-y-2">
+                <div className="experience-list mt-3 sm:mt-4 space-y-2 sm:space-y-3">
                   {experienceItems.map(item => (
                     <div key={item.company} className="experience-item">
                       <div className="experience-row">
@@ -311,13 +311,13 @@ export default function Page() {
 
             {/* Projects */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-3 p-4 section-divider pt-5">
+              <section id="projects" className="mt-3 sm:mt-4 p-2 sm:p-3 md:p-4 section-divider pt-4 sm:pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3 ml-0.4">
+                  <h3 className="font-bricolage text-xs sm:text-sm md:text-base font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-2 sm:mb-3 ml-0.5 sm:ml-1">
                     Proof of Work
                   </h3>
                 </FadeInText>
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2 md:space-y-2">
                   <SlideInLeft delay={0.1}>
                     <ProjectListItem
                       title="Kovaa - Zillow for India"
@@ -373,10 +373,10 @@ export default function Page() {
                   
                 </div>
                 <FadeInText delay={0.2}>
-                  <div className="mt-3 flex justify-center">
+                  <div className="mt-2 sm:mt-3 flex justify-center">
                     <a
                       href="https://github.com/insanekrishnna?tab=repositories" target="_blank"
-                      className="inline-flex items-center gap-1 rounded-sm border border-neutral-200 px-3 py-1.5 text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="inline-flex items-center gap-1 rounded-sm border border-neutral-200 px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       View all projects →
                     </a>
@@ -387,20 +387,20 @@ export default function Page() {
 
                {/* Skills */}
             <SlideUp delay={0.3}>
-              <section className="mt-3 p-4 section-divider pt-5">
+              <section className="mt-3 sm:mt-4 p-2 sm:p-3 md:p-4 section-divider pt-4 sm:pt-5">
                 <SkillsDraggable />
               </section>
             </SlideUp>
 
             <SlideUp delay={0.3}>
-              <section id="achievements" className="mt-3 p-3 section-divider pt-4">
+              <section id="achievements" className="mt-3 sm:mt-4 p-2 sm:p-3 md:p-3 section-divider pt-3 sm:pt-4 md:pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage mb-4 text-[0.9rem] sm:text-[0.95rem] font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-100 ml-1">
+                  <h3 className="font-bricolage mb-3 sm:mb-4 text-xs sm:text-sm md:text-base font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-100 ml-0.5 sm:ml-1 md:ml-1">
                     Achievements
                   </h3>
                 </FadeInText>
 
-                <div className="grid gap-3">
+                <div className="grid gap-2 sm:gap-2.5 md:gap-3">
                   <SlideInLeft delay={0.1}>
                     <AchievementCard
                       title="Winner — Ideathon 2025 ( CDGI )"
@@ -436,13 +436,13 @@ export default function Page() {
               </section>
             </SlideUp> */}
             <SlideUp delay={0.2}>
-              <section id="projects" className="mt-4 p-3 section-divider pt-5">
+              <section id="projects" className="mt-3 sm:mt-4 p-2 sm:p-3 md:p-3 section-divider pt-4 sm:pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3 ml-1">
+                  <h3 className="font-bricolage text-xs sm:text-sm md:text-base font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-2 sm:mb-3 ml-0.5 sm:ml-1 md:ml-1">
                     Blogs
                   </h3>
                 </FadeInText>
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2 md:space-y-2">
                 <SlideInLeft delay={0.1}>
                     <ProjectListItem
                       title="The mahabharata isnt about war, it's about mentorship"
@@ -471,11 +471,11 @@ export default function Page() {
                   
                 </div>
                 <FadeInText delay={0.2}>
-                  <div className="mt-3 flex justify-center">
+                  <div className="mt-2 sm:mt-3 flex justify-center">
                     <a
                       href="https://medium.com/@iiprathamyadav"
                       target="_blank"
-                      className="inline-flex items-center gap-1 rounded-sm border border-neutral-200 px-3 py-1.5 text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                      className="inline-flex items-center gap-1 rounded-sm border border-neutral-200 px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                     >
                       View all Blogs →
                     </a>
@@ -486,13 +486,13 @@ export default function Page() {
 
             {/* Education */}
             <SlideUp delay={0.3}>
-              <section className="mt-3 p-3 section-divider pt-5">
+              <section className="mt-3 sm:mt-4 p-2 sm:p-3 md:p-3 section-divider pt-4 sm:pt-5">
                 <FadeInText delay={0.1}>
-                  <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-semibold   tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-3">
+                  <h3 className="font-bricolage text-xs sm:text-sm md:text-base font-semibold tracking-[0.05em] text-neutral-900 dark:text-neutral-50 mb-2 sm:mb-3">
                     Education
                   </h3>
                 </FadeInText>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2 md:space-y-2">
                   <SlideInLeft delay={0.1}>
                     <li>
                       <AchievementItem
@@ -560,12 +560,12 @@ export default function Page() {
             </SlideUp>
           </div>
         </article>
-        <div className="mt-8 flex justify-center rounded-xl py-2  border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 text-xs text-neutral-500 dark:text-neutral-400 p-2 ">
+        <div className="mt-6 sm:mt-8 flex justify-center rounded-lg sm:rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950 text-xs sm:text-xs text-neutral-500 dark:text-neutral-400 p-2 sm:p-2 md:p-3 mx-0">
           
-            <span className="italic ">The people who are crazy enough to think they can change the world are <br /> the ones who do</span> <span aria-hidden> </span>
+            <span className="italic text-center leading-5 sm:leading-6">The people who are crazy enough to think they can change the world are <br /> the ones who do</span> <span aria-hidden> </span>
           
         </div>{" "}
-        <div className="mt-4 flex justify-center text-xs text-neutral-500 dark:text-neutral-400">
+        <div className="mt-2 sm:mt-3 md:mt-4 flex justify-center text-xs text-neutral-500 dark:text-neutral-400 px-2">
            
       designed and developed by&nbsp;<a href="https://x.com/insanekrishnaa" className="text-blue-400 hover:text-blue-500"> ~Pratham</a>
       </div>

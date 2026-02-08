@@ -53,8 +53,8 @@ export function SkillsDraggable() {
       
       {/* Header */}
       
-      <div className="mb-2 flex items-center justify-between">
-         <h3 className="font-bricolage text-[0.9rem] sm:text-[0.95rem] font-bold  tracking-[0.1em] text-slate-900 dark:text-slate-100">
+      <div className="mb-2 sm:mb-2 flex items-center justify-between">
+         <h3 className="font-bricolage text-xs sm:text-sm md:text-base font-bold tracking-[0.1em] text-slate-900 dark:text-slate-100">
           Skills
         </h3>
        
@@ -63,21 +63,21 @@ export function SkillsDraggable() {
       </div>
 
       {/* Skills */}
-      <div className="relative flex flex-wrap gap-2">
+      <div className="relative flex flex-wrap gap-1.5 sm:gap-2 md:gap-2">
         {skills.map(s => (
           <SkillPill key={s.label} {...s} />
         ))}
       </div>
 
       {/* Minimalist drag affordance */}
-      <div className="relative mt-1 h-2 overflow-hidden">
+      <div className="relative mt-0.5 sm:mt-1 h-2 overflow-hidden">
         <div
           className={cn(
-            "absolute left-0 top-1/2 h-px w-24 -translate-y-1/2",
+            "absolute left-0 top-1/2 h-px w-20 sm:w-24 -translate-y-1/2",
             "border-t border-dashed border-slate-300 dark:border-slate-600",
             "opacity-0 translate-x-0",
             "transition-all duration-300 ease-out",
-            "group-hover:opacity-100 group-hover:translate-x-3"
+            "group-hover:opacity-100 group-hover:translate-x-2 sm:group-hover:translate-x-3"
           )}
         />
       </div>

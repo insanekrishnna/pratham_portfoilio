@@ -7,7 +7,7 @@ type ChipProps = React.HTMLAttributes<HTMLSpanElement> & {
 }
 
 export function Chip({ className, variant = "soft", tech, ...props }: ChipProps) {
-  const base = "inline-flex items-center rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors duration-150 ease-out"
+  const base = "inline-flex items-center rounded-md border px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-medium transition-colors duration-150 ease-out"
 
   if (tech) {
     return (
