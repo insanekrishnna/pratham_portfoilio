@@ -28,40 +28,23 @@ export function NekoCat() {
         z-index: 9998;
         will-change: transform;
         transform: translate3d(0, 0, 0);
-        image-rendering: auto;
+        image-rendering: crisp-edges;
       `
 
-      container.innerHTML = `
-        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <!-- Head -->
-          <circle cx="20" cy="22" r="14" fill="#FFD700" stroke="#000" stroke-width="0.5"/>
-          <!-- Ears -->
-          <polygon points="12,12 10,4 16,10" fill="#FFD700" stroke="#000" stroke-width="0.5"/>
-          <polygon points="28,12 30,4 24,10" fill="#FFD700" stroke="#000" stroke-width="0.5"/>
-          <!-- Inner ears -->
-          <polygon points="13,11 12,7 15,10" fill="pink"/>
-          <polygon points="27,11 28,7 25,10" fill="pink"/>
-          <!-- Eyes -->
-          <circle cx="16" cy="18" r="2" fill="#000"/>
-          <circle cx="24" cy="18" r="2" fill="#000"/>
-          <!-- Eye highlights -->
-          <circle cx="16.5" cy="17.5" r="0.8" fill="#fff"/>
-          <circle cx="24.5" cy="17.5" r="0.8" fill="#fff"/>
-          <!-- Nose -->
-          <ellipse cx="20" cy="23" rx="1.5" ry="1" fill="pink" stroke="#000" stroke-width="0.3"/>
-          <!-- Mouth -->
-          <path d="M 20 23 Q 18 25 16 24" stroke="#000" stroke-width="0.5" fill="none" stroke-linecap="round"/>
-          <path d="M 20 23 Q 22 25 24 24" stroke="#000" stroke-width="0.5" fill="none" stroke-linecap="round"/>
-          <!-- Body -->
-          <ellipse cx="20" cy="32" rx="12" ry="8" fill="#FFD700" stroke="#000" stroke-width="0.5"/>
-          <!-- Paws -->
-          <circle cx="14" cy="38" r="2.5" fill="#FFD700" stroke="#000" stroke-width="0.4"/>
-          <circle cx="26" cy="38" r="2.5" fill="#FFD700" stroke="#000" stroke-width="0.4"/>
-          <!-- Tail base -->
-          <path d="M 10 32 Q 5 28 4 18" stroke="#FFD700" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      const img = document.createElement("img")
+      img.src = "/facedemo.jpeg"
+      img.alt = "Profile"
+      img.style.cssText = `
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        display: block;
       `
 
+      container.appendChild(img)
       document.body.appendChild(container)
     }
 
@@ -88,8 +71,8 @@ export function NekoCat() {
     }
 
     const onMouseMove = (e: MouseEvent) => {
-      mousePos.x = e.clientX - 20
-      mousePos.y = e.clientY - 20
+      mousePos.x = e.clientX - 24
+      mousePos.y = e.clientY - 24
     }
 
     const startNeko = () => {
