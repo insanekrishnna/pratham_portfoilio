@@ -41,9 +41,10 @@ export function NekoCat() {
         height: 48px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         display: block;
+        background: transparent;
       `
 
       container.appendChild(img)
@@ -74,7 +75,7 @@ export function NekoCat() {
 
     const onMouseMove = (e: MouseEvent) => {
       mousePos.x = e.clientX - 24
-      mousePos.y = e.clientY - 24
+      mousePos.y = e.clientY + 16
     }
 
     const startNeko = () => {
