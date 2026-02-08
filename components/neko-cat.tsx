@@ -4,6 +4,8 @@ import { useEffect } from "react"
 
 export function NekoCat() {
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     const DESKTOP_QUERY = "(min-width: 768px)"
     const desktopMedia = window.matchMedia(DESKTOP_QUERY)
 
