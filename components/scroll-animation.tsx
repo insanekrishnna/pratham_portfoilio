@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface ScrollAnimationProps {
   children: React.ReactNode;
@@ -22,7 +22,14 @@ export function ScrollAnimation({
   distance = 40,
 }: ScrollAnimationProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-20px" });
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setPrefersReducedMotion(reduced);
+  }, []);
+
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   const directionVariants = {
     up: { y: distance, opacity: 0 },
@@ -33,15 +40,15 @@ export function ScrollAnimation({
   };
 
   const animateVariants = {
-    hidden: directionVariants[direction],
+    hidden: prefersReducedMotion ? { opacity: 1, y: 0, x: 0 } : directionVariants[direction],
     visible: {
       y: 0,
       x: 0,
       opacity: 1,
       transition: {
-        duration,
-        delay,
-        ease: [0.16, 1, 0.3, 1] as any, // Custom smooth easing
+        duration: prefersReducedMotion ? 0 : duration,
+        delay: prefersReducedMotion ? 0 : delay,
+        ease: [0.16, 1, 0.3, 1] as any,
       },
     },
   };
@@ -150,71 +157,5 @@ export function SlideInRight({
   );
 }
 
-// Staggered animation for lists
-interface StaggeredAnimationProps {
-  children: React.ReactNode;
-  className?: string;
-  staggerDelay?: number;
-  duration?: number;
-  direction?: "up" | "down" | "left" | "right";
-  distance?: number;
-}
-
-export function StaggeredAnimation({
-  children,
-  className = "",
-  staggerDelay = 0.1,
-  duration = 0.6,
-  direction = "up",
-  distance = 20,
-}: StaggeredAnimationProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const directionVariants = {
-    up: { y: distance, opacity: 0 },
-    down: { y: -distance, opacity: 0 },
-    left: { x: distance, opacity: 0 },
-    right: { x: -distance, opacity: 0 },
-  };
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: staggerDelay,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: directionVariants[direction],
-    visible: {
-      y: 0,
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration,
-        ease: [0.25, 0.46, 0.45, 0.94] as any,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className={className}
-    >
-      {Array.isArray(children)
-        ? children.map((child, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              {child}
-            </motion.div>
-          ))
-        : children}
-    </motion.div>
-  );
-}
+// Staggered animation for lists - removed in performance cleanup
+// Use SlideUp with delay prop instead for better performance

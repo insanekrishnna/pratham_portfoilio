@@ -1,24 +1,16 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail, Calendar, ChevronDown } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Image from "next/image";
 import { TextShimmer } from "@/components/ui/text-shimmer";
 import { Typewriter } from "@/components/ui/typewriter";
 import { TimeCounter } from "@/components/time-counter";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
-
-
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ProjectListItem } from "@/components/project-list-item";
 import { AchievementCard, AchievementItem } from "@/components/achievement-item";
 import { Dock } from "@/components/dock";
 import { SkillsDraggable } from "@/components/skills-draggable";
-import { GitHubContributions } from "@/components/github-contributions";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ContactForm } from "@/components/contact-form";
 import {
-  ScrollAnimation,
   FadeInText,
   SlideUp,
   SlideInLeft,

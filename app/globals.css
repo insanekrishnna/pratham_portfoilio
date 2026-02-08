@@ -351,19 +351,27 @@
     opacity: 0;
     overflow: hidden;
     margin-top: 0;
-    transition: max-height 0.35s ease, opacity 0.35s ease,
-      margin-top 0.35s ease;
+    transition: opacity 0.35s ease;
   }
 
-  .experience-item:hover .experience-details {
-    max-height: 280px;
-    opacity: 1;
-    margin-top: 8px;
+  @media (hover: hover) and (pointer: fine) {
+    .experience-details {
+      transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+    }
+
+    .experience-item:hover .experience-details {
+      max-height: 280px;
+      opacity: 1;
+      margin-top: 8px;
+    }
   }
 
   @media (max-width: 640px) {
-    .experience-item:hover .experience-details {
-      max-height: 320px;
+    .experience-details {
+      max-height: none;
+      opacity: 1;
+      margin-top: 8px;
+      transition: none;
     }
   }
 
@@ -401,7 +409,6 @@
   }
 
   .bg-grid {
-    /* use variables so theme flips without duplicating selectors */
     background-color: var(--grid-bg);
     background-image: linear-gradient(
         to right,
@@ -411,7 +418,13 @@
       linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: clamp(20px, 5vw, 26px) clamp(20px, 5vw, 26px);
     background-position: center top;
-    background-attachment: fixed;
+    background-attachment: local;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .bg-grid {
+      background-attachment: fixed;
+    }
   }
 
   .dark .bg-grid {
@@ -460,26 +473,3 @@
   }
 }
 
-#cursor-toy {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-  background-repeat: no-repeat;
-  image-rendering: auto;
-}
-
-@media (pointer: coarse) {
-  #cursor-toy {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #cursor-toy {
-    display: none;
-  }
-}

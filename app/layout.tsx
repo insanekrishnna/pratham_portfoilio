@@ -3,10 +3,8 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
 import StructuredData from "@/components/structured-data";
 import { ErrorBoundary } from "@/components/error-boundary";
-import { CursorToy } from "@/components/cursor-toy";
 import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -165,7 +163,6 @@ export default function RootLayout({
             <LenisSmoothScroll />
             <div className="min-h-dvh">
               {children}
-              <CursorToy />
             </div>
           </ThemeProvider>
         </ErrorBoundary>

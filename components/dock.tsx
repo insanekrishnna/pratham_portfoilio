@@ -6,12 +6,19 @@ import {
   Mail,
   Linkedin,
   Twitter,
-  ExternalLink,
   Code2,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useState, useEffect } from "react";
 
 export function Dock() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobile = window.matchMedia("(pointer: coarse)").matches;
+    setIsMobile(mobile);
+  }, []);
+
   const items = [
     { icon: Home, label: "Home", href: "#" },
     { icon: Code2, label: "Projects", href: "#projects" },
@@ -33,10 +40,14 @@ export function Dock() {
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative inline-flex items-center justify-center rounded-full p-1.5 sm:p-2 text-neutral-700 transition-colors duration-200 hover:text-neutral-900 transition-transform active:scale-90 dark:text-neutral-200 dark:hover:text-white"
-              style={{
-                animation: `slideIn 0.4s ease-out ${index * 0.05}s both`
-              }}
+              className="group relative inline-flex items-center justify-center rounded-full p-1.5 sm:p-2 text-neutral-700 transition-colors duration-200 hover:text-neutral-900 active:scale-90 dark:text-neutral-200 dark:hover:text-white"
+              style={
+                !isMobile
+                  ? {
+                      animation: `slideIn 0.4s ease-out ${index * 0.05}s both`,
+                    }
+                  : {}
+              }
             >
               <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               <span className="sr-only">{item.label}</span>
@@ -47,7 +58,7 @@ export function Dock() {
           </div>
         ))}
         <span className="mx-1 sm:mx-2 h-4 sm:h-5 w-px bg-neutral-200/80 dark:bg-neutral-800/80" aria-hidden />
-        <ThemeToggle className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border border-neutral-200/80 bg-white text-neutral-700 shadow-none hover:bg-neutral-100 hover:text-neutral-900 transition-transform active:scale-90 focus-visible:ring-neutral-300 dark:border-neutral-800/80 dark:bg-neutral-950 dark:text-neutral-200 dark:hover:bg-neutral-900 dark:hover:text-white dark:focus-visible:ring-neutral-700" />
+        <ThemeToggle className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border border-neutral-200/80 bg-white text-neutral-700 shadow-none hover:bg-neutral-100 hover:text-neutral-900 transition-colors active:scale-90 focus-visible:ring-neutral-300 dark:border-neutral-800/80 dark:bg-neutral-950 dark:text-neutral-200 dark:hover:bg-neutral-900 dark:hover:text-white dark:focus-visible:ring-neutral-700" />
       </nav>
       
       <style jsx>{`
