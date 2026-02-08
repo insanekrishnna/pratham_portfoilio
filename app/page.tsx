@@ -412,7 +412,8 @@ export default function Page() {
                 <SlideInLeft delay={0.1}>
                     <ProjectListItem
                       title="The mahabharata isnt about war, it's about mentorship"
-                    image="Mahabharat.jpg"
+                      image="Mahabharat.jpg"
+                      headerLayout="vertical"
                       links={[
                         {
                           label: "December 19",

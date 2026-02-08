@@ -10,6 +10,7 @@ type ProjectListItemProps = {
   image?: string;
   video?: string;
   className?: string;
+  headerLayout?: "horizontal" | "vertical";
 };
 
 export function ProjectListItem({
@@ -20,6 +21,7 @@ export function ProjectListItem({
   image,
   video,
   className,
+  headerLayout = "horizontal",
 }: ProjectListItemProps) {
   const hasBullets = bullets.length > 0
   const hasTags = tags.length > 0
@@ -55,12 +57,12 @@ export function ProjectListItem({
       ) : null}
       
       <div className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4">
-        <header className="flex items-start justify-between gap-2 mb-2 sm:mb-2.5">
-          <h4 className="text-xs sm:text-sm md:text-base font-semibold text-neutral-900 dark:text-neutral-50 flex-1">
+        <header className={headerLayout === "vertical" ? "space-y-2" : "flex items-start justify-between gap-2 mb-2 sm:mb-2.5"}>
+          <h4 className="text-xs sm:text-sm md:text-base font-semibold text-neutral-900 dark:text-neutral-50">
             {title}
           </h4>
           {hasLinks ? (
-            <div className="flex flex-wrap gap-1 sm:gap-1.5 items-center justify-end flex-shrink-0">
+            <div className={headerLayout === "vertical" ? "flex flex-wrap gap-1 sm:gap-1.5 items-center" : "flex flex-wrap gap-1 sm:gap-1.5 items-center justify-end flex-shrink-0"}>
               {links.map((l, idx) => (
                 <a
                   key={l.label}
