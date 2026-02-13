@@ -3,6 +3,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Smooth scrolling optimization */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enable hardware acceleration for smooth scrolling */
+body, html {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

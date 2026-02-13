@@ -42,8 +42,15 @@ export function LenisSmoothScroll() {
       const lenis = new Lenis({
         anchors: true,
         autoRaf: false,
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        duration: 1.8,
+        easing: (t) => {
+          // Smooth cubic easing - very smooth and luxurious
+          if (t === 0) return 0
+          if (t === 1) return 1
+          // Cubic easing-out
+          return 1 - Math.pow(1 - t, 3)
+        },
+        lerp: 0.1, // Smooth interpolation
       })
       lenisRef.current = lenis
 
