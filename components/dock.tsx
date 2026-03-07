@@ -22,7 +22,7 @@ export function Dock() {
     { type: "image", label: "Home", href: "#" },
     { icon: Code2, label: "Projects", href: "#projects" },
     { icon: Github, label: "GitHub", href: "https://github.com/insanekrishnna" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/prathamyadav" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/prathamyadavv/" },
     { icon: Twitter, label: "Twitter", href: "https://twitter.com/insanekrishnaa" },
     { icon: Mail, label: "Email", href: "mailto:iiprathamayadav@gmail.com" },
   ];
