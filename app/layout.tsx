@@ -7,6 +7,7 @@ import StructuredData from "@/components/structured-data";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll";
 import { NekoCat } from "@/components/neko-cat";
+import { Analytics } from "@vercel/analytics/next";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -166,6 +167,7 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
