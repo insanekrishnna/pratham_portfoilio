@@ -1,6 +1,6 @@
-import Image from "next/image"
 import { MapPin } from "lucide-react"
 
+import { AvatarSwitch } from "@/components/home/avatar-switch"
 import { TimeCounter } from "@/components/common/time-counter"
 import { RoleTypewriter } from "@/components/home/role-typewriter"
 import { profile } from "@/lib/content/profile"
@@ -13,18 +13,7 @@ export function Hero() {
   return (
     <header className="flex w-full items-center">
       <div className="p-4 sm:p-5">
-        <div className="border-border w-fit rounded-[9px] border p-[3.8px] dark:border-neutral-700">
-          <div className="border-border box-border size-20 overflow-hidden rounded-[8px] border bg-neutral-200 p-1 select-none sm:size-28 md:size-30 dark:bg-neutral-800">
-            <Image
-              src={profile.avatar}
-              alt={`${profile.name} — ${profile.title}`}
-              width={120}
-              height={120}
-              priority
-              className="box-border size-full scale-110 rounded-[5px] object-cover"
-            />
-          </div>
-        </div>
+        <AvatarSwitch />
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">

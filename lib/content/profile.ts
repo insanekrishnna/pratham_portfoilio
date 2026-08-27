@@ -9,7 +9,9 @@ export const profile = {
   age: 20,
   location: "Indore, India",
   timezone: "Asia/Kolkata",
+  /** Shown by default; the hero switch flips between this and the photo. */
   avatar: "/facedemo.jpeg",
+  avatarPhoto: "/pratham.png",
   email: "iiprathamyadav@gmail.com",
   resumeUrl:
     "https://drive.google.com/file/d/15l1MU4SVFpC7BaRMF0iH-J9qz_SxlEC_/view?usp=drive_link",

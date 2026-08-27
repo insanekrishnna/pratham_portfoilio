@@ -21,9 +21,14 @@ export const sectionIds = {
   contact: "contact",
 } as const
 
-export const quote = {
-  text: "The people who are crazy enough to think they can change the world are the ones who do.",
-  author: "Apple, Think Different",
+export const skillsVenn = {
+  image: "/pratham.png",
+  skills: {
+    top: "Frontend Architecture",
+    left: "Design Systems",
+    right: "Developer Tooling",
+    bottom: "Product Thinking\n& User Research",
+  },
 }
 
 export const footer = {
