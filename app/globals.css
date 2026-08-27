@@ -369,6 +369,13 @@
     text-decoration-color: currentColor;
   }
 
+  /* UserCursor adds this to <html> only once it has a pointer to track,
+     so the native cursor is never hidden without a replacement drawn. */
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+
   /* The contribution graph scrolls horizontally on narrow screens; the
      bar itself would sit under the legend and read as a stray rule. */
   .no-scrollbar {

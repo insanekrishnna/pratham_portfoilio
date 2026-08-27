@@ -11,7 +11,7 @@ import { UiFeedbackProvider } from "@/hooks/use-ui-feedback"
 import { MotionProvider } from "@/components/common/motion-provider"
 import { ErrorBoundary } from "@/components/error-boundary"
 import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll"
-import { NekoCat } from "@/components/neko-cat"
+import { UserCursor } from "@/components/common/user-cursor"
 import { SiteShell } from "@/components/layout/site-shell"
 import StructuredData from "@/components/structured-data"
 import { siteUrl } from "@/lib/content/site"
@@ -164,7 +164,7 @@ export default function RootLayout({
             <MotionProvider>
               <UiFeedbackProvider>
                 <LenisSmoothScroll />
-                <NekoCat />
+                <UserCursor name="hi" />
                 <SiteShell>{children}</SiteShell>
               </UiFeedbackProvider>
             </MotionProvider>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { LoaderIcon } from "lucide-react"
 
 import { SectionHeading } from "@/components/layout/section-heading"
@@ -30,6 +30,17 @@ const levelByQuartile: Record<string, number> = {
   FOURTH_QUARTILE: 4,
 }
 
+type HoveredDay = { count: number; label: string; x: number; y: number }
+
+/** "Aug 26, 2026" from the ISO date the cell carries. */
+function dayLabel(iso: string) {
+  return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  })
+}
+
 /** "2025-26" for a range that straddles new year, "2026" for one that doesn't. */
 function rangeLabel(activities: Activity[]) {
   const first = activities[0]?.date.slice(0, 4)
@@ -46,6 +57,7 @@ export function GitHubActivity() {
   const [activities, setActivities] = useState<Activity[] | null>(null)
   const [total, setTotal] = useState(0)
   const [failed, setFailed] = useState(false)
+  const [hovered, setHovered] = useState<HoveredDay | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -77,6 +89,29 @@ export function GitHubActivity() {
     }
   }, [])
 
+  const handleCellHover = useCallback((event: React.MouseEvent) => {
+    const cell = event.target as SVGRectElement
+    const { date, count } = cell.dataset
+    if (!date || count === undefined) {
+      setHovered(null)
+      return
+    }
+
+    // Positioned against the section box, not the scrolling calendar, so
+    // the tooltip stays put when the graph is scrolled sideways.
+    const container = event.currentTarget.closest("section")
+    if (!container) return
+    const cellBox = cell.getBoundingClientRect()
+    const containerBox = container.getBoundingClientRect()
+
+    setHovered({
+      count: Number(count),
+      label: dayLabel(date),
+      x: cellBox.left + cellBox.width / 2 - containerBox.left,
+      y: cellBox.top - containerBox.top,
+    })
+  }, [])
+
   const labels = useMemo(
     () =>
       activities
@@ -91,7 +126,19 @@ export function GitHubActivity() {
     <section aria-labelledby={sectionIds.activity}>
       <SectionHeading id={sectionIds.activity}>Activity</SectionHeading>
 
-      <div className="px-4 py-6">
+      <div className="relative px-4 py-6" onMouseLeave={() => setHovered(null)}>
+        {hovered && (
+          <div
+            role="status"
+            className="bg-foreground text-background pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-full rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap shadow-md"
+            style={{ left: hovered.x, top: hovered.y - 6 }}
+          >
+            {hovered.count === 1 ? "1 contribution" : `${hovered.count} contributions`}
+            {" on "}
+            {hovered.label}
+          </div>
+        )}
+
         {activities ? (
           <ContributionGraph
             className="mx-auto font-mono"
@@ -102,7 +149,12 @@ export function GitHubActivity() {
             blockMargin={3}
             labels={labels}
           >
-            <ContributionGraphCalendar className="no-scrollbar">
+            {/* One delegated listener rather than 370 per-cell handlers;
+                every rect already carries its date and count as data-*. */}
+            <ContributionGraphCalendar
+              className="no-scrollbar"
+              onMouseOver={handleCellHover}
+            >
               {({ activity, dayIndex, weekIndex }) => (
                 <ContributionGraphBlock
                   activity={activity}
