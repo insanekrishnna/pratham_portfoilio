@@ -6,7 +6,7 @@ export async function GET() {
     const imagePath = join(process.cwd(), "public", "facedemo.jpeg");
     const imageBuffer = await readFile(imagePath);
 
-    return new Response(imageBuffer, {
+    return new Response(new Uint8Array(imageBuffer), {
       headers: {
         "Content-Type": "image/jpeg",
         "Cache-Control": "public, max-age=86400",

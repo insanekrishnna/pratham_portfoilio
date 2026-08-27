@@ -1,0 +1,130 @@
+"use client"
+
+import { useEffect, useMemo, useState } from "react"
+import { LoaderIcon } from "lucide-react"
+
+import { SectionHeading } from "@/components/layout/section-heading"
+import {
+  type Activity,
+  ContributionGraph,
+  ContributionGraphBlock,
+  ContributionGraphCalendar,
+  ContributionGraphFooter,
+  ContributionGraphLegend,
+  ContributionGraphTotalCount,
+} from "@/components/ui/contribution-graph"
+import { sectionIds } from "@/lib/content/site"
+
+type ContributionDay = {
+  date: string
+  contributionCount: number
+  contributionLevel: string
+}
+
+/** The GraphQL calendar reports quartile names; the graph wants 0–4. */
+const levelByQuartile: Record<string, number> = {
+  NONE: 0,
+  FIRST_QUARTILE: 1,
+  SECOND_QUARTILE: 2,
+  THIRD_QUARTILE: 3,
+  FOURTH_QUARTILE: 4,
+}
+
+/** "2025-26" for a range that straddles new year, "2026" for one that doesn't. */
+function rangeLabel(activities: Activity[]) {
+  const first = activities[0]?.date.slice(0, 4)
+  const last = activities.at(-1)?.date.slice(0, 4)
+  if (!first || !last) return String(new Date().getFullYear())
+  return first === last ? first : `${first}-${last.slice(2)}`
+}
+
+/**
+ * Reads /api/github. The section removes itself entirely if the feed is
+ * unavailable rather than showing an error a visitor cannot act on.
+ */
+export function GitHubActivity() {
+  const [activities, setActivities] = useState<Activity[] | null>(null)
+  const [total, setTotal] = useState(0)
+  const [failed, setFailed] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+
+    const load = async () => {
+      try {
+        const response = await fetch("/api/github")
+        if (!response.ok) throw new Error("Request failed")
+        const data = await response.json()
+        if (cancelled) return
+        setActivities(
+          data.weeks.flatMap((week: { contributionDays: ContributionDay[] }) =>
+            week.contributionDays.map((day) => ({
+              date: day.date,
+              count: day.contributionCount,
+              level: levelByQuartile[day.contributionLevel] ?? 0,
+            }))
+          )
+        )
+        setTotal(data.totalContributions)
+      } catch {
+        if (!cancelled) setFailed(true)
+      }
+    }
+
+    void load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const labels = useMemo(
+    () =>
+      activities
+        ? { totalCount: `{{count}} contributions in ${rangeLabel(activities)}` }
+        : undefined,
+    [activities]
+  )
+
+  if (failed) return null
+
+  return (
+    <section aria-labelledby={sectionIds.activity}>
+      <SectionHeading id={sectionIds.activity}>Activity</SectionHeading>
+
+      <div className="px-4 py-6">
+        {activities ? (
+          <ContributionGraph
+            className="mx-auto font-mono"
+            data={activities}
+            totalCount={total}
+            fontSize={11}
+            blockSize={9}
+            blockMargin={3}
+            labels={labels}
+          >
+            <ContributionGraphCalendar className="no-scrollbar">
+              {({ activity, dayIndex, weekIndex }) => (
+                <ContributionGraphBlock
+                  activity={activity}
+                  dayIndex={dayIndex}
+                  weekIndex={weekIndex}
+                />
+              )}
+            </ContributionGraphCalendar>
+
+            <ContributionGraphFooter>
+              <ContributionGraphTotalCount className="text-foreground" />
+              <ContributionGraphLegend />
+            </ContributionGraphFooter>
+          </ContributionGraph>
+        ) : (
+          <div className="flex h-[162px] items-center justify-center">
+            <LoaderIcon className="text-foreground animate-spin" aria-label="Loading contributions" />
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+export default GitHubActivity

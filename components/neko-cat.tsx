@@ -9,8 +9,12 @@ export function NekoCat() {
     let container: HTMLDivElement | null = null
     let rafId: number | null = null
 
-    const pos = { x: 0, y: 0 }
-    const mousePos = { x: 0, y: 0 }
+    // Park it low-left at rest so it never sits on the wordmark before
+    // the first pointer move.
+    const restX = 24
+    const restY = Math.max(window.innerHeight - 96, 24)
+    const pos = { x: restX, y: restY }
+    const mousePos = { x: restX, y: restY }
     const easing = 0.08
 
     const createNeko = () => {
@@ -26,7 +30,7 @@ export function NekoCat() {
         pointer-events: none;
         z-index: 9998;
         will-change: transform;
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(${restX}px, ${restY}px, 0);
         image-rendering: crisp-edges;
       `
 

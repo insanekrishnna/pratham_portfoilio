@@ -1,36 +1,23 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next"
+
+import { siteUrl } from "@/lib/content/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date()
+
   return [
+    { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
     {
-      url: "https://pratham.dev",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: "https://pratham.dev/#about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://pratham.dev/#experience",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://pratham.dev/#projects",
-      lastModified: new Date(),
+      url: `${siteUrl}/projects`,
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: "https://pratham.dev/#achievements",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: `${siteUrl}/contact`,
+      lastModified,
+      changeFrequency: "yearly",
       priority: 0.7,
     },
-  ];
+  ]
 }
