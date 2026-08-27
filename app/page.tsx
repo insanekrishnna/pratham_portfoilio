@@ -1,5 +1,5 @@
 import { HatchRule } from "@/components/layout/rules"
-import { AvailabilityBanner } from "@/components/home/availability-banner"
+import { InteractiveDots } from "@/components/home/interactive-dots"
 import { Hero } from "@/components/home/hero"
 import { About } from "@/components/home/about"
 import { Connect } from "@/components/home/connect"
@@ -15,7 +15,7 @@ import { CTA } from "@/components/home/cta"
 export default function HomePage() {
   return (
     <main>
-      <AvailabilityBanner />
+      <InteractiveDots className="screen-line-bottom h-32 w-full sm:h-40" />
       <Hero />
 
       <HatchRule />

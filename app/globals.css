@@ -49,6 +49,10 @@
   --live: oklch(0.72 0.19 149);
   --building: oklch(0.77 0.16 78);
 
+  /* Ink for the canvas dot field. Kept as bare RGB channels because
+     canvas has to parse it in JS, and oklch() does not survive that. */
+  --dot-ink: 115 115 115;
+
   /* Contribution heatmap ramp. Level 0 stays neutral so empty days read
      as absence rather than as the faintest shade of activity. */
   --contrib-0: color-mix(in oklab, var(--base-foreground) 6%, var(--base));
@@ -101,6 +105,9 @@
   --live: oklch(0.72 0.19 149);
   --building: oklch(0.77 0.16 78);
 
+  /* Plain white on the dark ground; alpha does the rest at draw time. */
+  --dot-ink: 255 255 255;
+
   /* Same ramp inverted: the darkest green is the quietest here, so the
      scale still climbs toward the brightest cell. */
   --contrib-0: color-mix(in oklab, var(--base-foreground) 8%, var(--base));
@@ -118,7 +125,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Google Sans Flex", ui-sans-serif, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-pixel: var(--font-pixelify);
 

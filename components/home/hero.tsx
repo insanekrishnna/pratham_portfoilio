@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react"
 
 import { AvatarSwitch } from "@/components/home/avatar-switch"
+import { GreetingCycle } from "@/components/home/greeting-cycle"
 import { TimeCounter } from "@/components/common/time-counter"
 import { RoleTypewriter } from "@/components/home/role-typewriter"
 import { profile } from "@/lib/content/profile"
@@ -17,6 +18,8 @@ export function Hero() {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
+        <GreetingCycle className="text-muted-foreground font-mono text-xs" />
+
         <div className="text-muted-foreground flex items-center justify-between gap-2 text-xs">
           <span className="truncate font-mono">@{profile.handle}</span>
           <TimeCounter

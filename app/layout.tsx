@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next"
-import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Pixelify_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
@@ -148,9 +147,23 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable} ${pixelifySans.variable}`}
+      className={`${GeistMono.variable} ${pixelifySans.variable}`}
     >
       <head>
+        {/* Google Sans Flex is newer than the family list next/font ships
+            with, so it cannot be self-hosted through next/font and is
+            linked directly. Variable across opsz 8..144 and wght 1..1000,
+            so every weight and optical size costs one file. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,1..1000&display=swap"
+        />
         <StructuredData />
       </head>
       <body className="min-h-dvh font-sans antialiased">

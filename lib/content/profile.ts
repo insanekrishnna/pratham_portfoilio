@@ -5,7 +5,7 @@ export const profile = {
   title: "Full Stack Developer",
   /** Rotated by the hero typewriter. */
   roles: ["Full Stack Developer", "Designer", "Freelancer"],
-  meta: "20, he/him — Indore, IND",
+  meta: "Indore, IND",
   age: 20,
   location: "Indore, India",
   timezone: "Asia/Kolkata",
@@ -18,6 +18,18 @@ export const profile = {
   calendlyUrl: "https://calendly.com/iiprathamyadav/30min",
   availability: "Open to internships & freelance work",
 } as const
+
+/** Cycled above the handle in the hero. `lang` keeps each script legible. */
+export const greetings: { text: string; lang: string }[] = [
+  { text: "hello", lang: "en" },
+  { text: "नमस्ते", lang: "hi" },
+  { text: "hola", lang: "es" },
+  { text: "こんにちは", lang: "ja" },
+  { text: "bonjour", lang: "fr" },
+  { text: "olá", lang: "pt" },
+  { text: "안녕하세요", lang: "ko" },
+  { text: "ciao", lang: "it" },
+]
 
 /**
  * The About list. `strong` fragments are rendered as emphasised,
