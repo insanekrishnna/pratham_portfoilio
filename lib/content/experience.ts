@@ -24,7 +24,7 @@ export const experiences: Experience[] = [
     id: "genius-hrtech",
     company: "Genius HRTech LTD.",
     role: "Operation Fellow",
-    location: "Remote",
+    location: "Remote ",
     period: { start: "Jan 2024", end: "Jun 2025" },
     logo: "/GHRTT.jpeg",
     website: "https://www.geniushrtech.com/",

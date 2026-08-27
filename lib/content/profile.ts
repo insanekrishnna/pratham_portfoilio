@@ -33,10 +33,7 @@ export const bio: { text: string; strong?: string[] }[] = [
     text: "On the backend I work with Express, MongoDB, PostgreSQL and Supabase, with a bias toward strong validation, correctness and predictable failure handling.",
     strong: ["Express, MongoDB, PostgreSQL and Supabase"],
   },
-  {
-    text: "Currently a SWE Intern at Largence, building evaluation and QA frameworks for production-grade legal AI workflows.",
-    strong: ["SWE Intern at Largence"],
-  },
+ 
 ]
 
 export type SocialLink = {
