@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # pratham.dev
 
 Personal portfolio of Pratham Yadav — Full Stack Developer.
@@ -60,3 +61,6 @@ token is optional.
 
 Interface sound is off by default and can be enabled from the command menu.
 All motion respects `prefers-reduced-motion`.
+=======
+prathm.me
+>>>>>>> bdc7251670ca238a7c0bdd888a367b69f8cf71dd

@@ -1,9 +1,22 @@
+<<<<<<< HEAD
 import type { Metadata, Viewport } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Pixelify_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+=======
+import type React from "react";
+import type { Metadata } from "next";
+import { Bricolage_Grotesque } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import StructuredData from "@/components/structured-data";
+import { ErrorBoundary } from "@/components/error-boundary";
+import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll";
+import { NekoCat } from "@/components/neko-cat";
+import { Analytics } from "@vercel/analytics/next";
+>>>>>>> bdc7251670ca238a7c0bdd888a367b69f8cf71dd
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -171,7 +184,10 @@ export default function RootLayout({
           </ThemeProvider>
         </ErrorBoundary>
         <Analytics />
+<<<<<<< HEAD
         <SpeedInsights />
+=======
+>>>>>>> bdc7251670ca238a7c0bdd888a367b69f8cf71dd
       </body>
     </html>
   )

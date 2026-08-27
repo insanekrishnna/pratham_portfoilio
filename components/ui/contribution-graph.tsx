@@ -62,6 +62,18 @@ const DEFAULT_MONTH_LABELS = [
   "Dec",
 ];
 
+/**
+ * Shared by the calendar cells and the legend swatches so the two can
+ * never drift. The ramp itself lives in globals.css as --contrib-0..4.
+ */
+const LEVEL_FILL = [
+  'data-[level="0"]:fill-contrib-0',
+  'data-[level="1"]:fill-contrib-1',
+  'data-[level="2"]:fill-contrib-2',
+  'data-[level="3"]:fill-contrib-3',
+  'data-[level="4"]:fill-contrib-4',
+].join(" ");
+
 const DEFAULT_LABELS: Labels = {
   months: DEFAULT_MONTH_LABELS,
   weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
