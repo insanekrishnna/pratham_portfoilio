@@ -16,8 +16,11 @@ type Feedback = {
   soundEnabled: boolean
   setSoundEnabled: (value: boolean) => void
   toggleSound: () => void
-  /** Plays the click and fires a short haptic tap, where supported. */
-  tap: () => void
+  /**
+   * Plays the click and fires a short haptic tap, where supported. Pass
+   * `silent` when the caller plays its own sound, so the two don't stack.
+   */
+  tap: (options?: { silent?: boolean }) => void
 }
 
 const FeedbackContext = createContext<Feedback | null>(null)
@@ -60,8 +63,8 @@ export function UiFeedbackProvider({ children }: { children: React.ReactNode }) 
     }
   }, [])
 
-  const tap = useCallback(() => {
-    if (soundEnabled) {
+  const tap = useCallback((options?: { silent?: boolean }) => {
+    if (soundEnabled && !options?.silent) {
       let audio = audioRef.current
       if (!audio) {
         audio = new Audio("/click.wav")

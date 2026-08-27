@@ -15,14 +15,15 @@ export async function GET() {
     )
   }
 
-  const to = new Date()
-  const from = new Date()
-  from.setFullYear(to.getFullYear() - 1)
-
+  // No from/to on purpose. Passing them meant sending `new Date()` as a
+  // UTC instant, so before 05:30 IST the window ended on *yesterday* and
+  // today's contributions were dropped. Omitting the range makes GitHub
+  // use its own trailing year in the account's timezone — the identical
+  // window github.com/<login> renders, so the totals always agree.
   const query = `
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
+    query($login: String!) {
       user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
+        contributionsCollection {
           contributionCalendar {
             totalContributions
             weeks {
@@ -44,10 +45,10 @@ export async function GET() {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({
-      query,
-      variables: { login, from: from.toISOString(), to: to.toISOString() },
-    }),
+    body: JSON.stringify({ query, variables: { login } }),
+    // Next would otherwise be free to memoise this; the CDN header below
+    // is what controls freshness, so keep the upstream call uncached.
+    cache: "no-store",
   })
 
   if (!res.ok) {
@@ -83,7 +84,10 @@ export async function GET() {
     },
     {
       headers: {
-        "Cache-Control": "s-maxage=3600, stale-while-revalidate=86400",
+        // 5 minutes at the CDN; `max-age=0` keeps browsers from holding
+        // their own copy, so a reload is never older than that window.
+        "Cache-Control":
+          "public, max-age=0, s-maxage=300, stale-while-revalidate=600",
       },
     }
   )

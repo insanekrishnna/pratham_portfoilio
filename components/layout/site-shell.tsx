@@ -1,7 +1,6 @@
 import { Container } from "@/components/layout/container"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { SkillsVenn } from "@/components/common/skills-venn"
 
 /**
  * The frame every page sits in: a full-bleed sticky nav, then the 715px
@@ -33,7 +32,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
           <div id="main" className="relative z-10">
             {children}
-            <SkillsVenn />
             <Footer />
           </div>
         </div>

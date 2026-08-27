@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
+import useSound from "use-sound"
 
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { buttonVariants } from "@/components/ui/button"
@@ -15,6 +16,13 @@ export function ThemeToggle({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false)
   const { tap } = useUiFeedback()
   const wrapperRef = useRef<HTMLSpanElement>(null)
+
+  // `interrupt` restarts the clip instead of layering a second voice, so
+  // hammering the toggle stays one clean click rather than a smear.
+  const [playThemeSound] = useSound("/sounds/theme-toggle.mp3", {
+    volume: 0.1,
+    interrupt: true,
+  })
 
   useEffect(() => setMounted(true), [])
 
@@ -50,7 +58,16 @@ export function ThemeToggle({ className }: { className?: string }) {
       <TooltipTrigger asChild>
         {/* AnimatedThemeToggler owns its button's ref and onClick, so the
             tooltip anchors to a wrapper and the tap fires on the bubble. */}
-        <span ref={wrapperRef} onClick={tap} className="inline-flex">
+        {/* Capture phase so the click is audible before the theme flips.
+            `silent` keeps tap() to haptics — the clip below is the sound. */}
+        <span
+          ref={wrapperRef}
+          onClickCapture={() => {
+            playThemeSound()
+            tap({ silent: true })
+          }}
+          className="inline-flex"
+        >
           <AnimatedThemeToggler
             variant="circle"
             // Controlled: next-themes stays the source of truth and handles
