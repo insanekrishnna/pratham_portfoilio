@@ -12,12 +12,16 @@ import { profile } from "@/lib/content/profile"
  */
 export function Hero() {
   return (
-    <header className="flex w-full items-center">
+    <header className="flex w-full items-start">
       <div className="p-4 sm:p-5">
         <AvatarSwitch />
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col justify-center gap-0">
+      {/* Same top padding as the portrait's box, so the first line of
+          text sits on the portrait's top edge instead of centring
+          against it — the avatar column is taller now that it carries
+          the switch beneath the image. */}
+      <div className="flex min-w-0 flex-1 flex-col gap-0 pt-4 sm:pt-5">
         {/* The greeting takes the slot the handle used to hold, so the
             clock keeps its place and the whole stack rides one line up. */}
         <div className="text-muted-foreground flex items-center justify-between gap-2 text-xs">
