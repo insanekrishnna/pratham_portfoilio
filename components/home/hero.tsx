@@ -17,11 +17,11 @@ export function Hero() {
         <AvatarSwitch />
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
-        <GreetingCycle className="text-muted-foreground font-mono text-xs" />
-
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-0">
+        {/* The greeting takes the slot the handle used to hold, so the
+            clock keeps its place and the whole stack rides one line up. */}
         <div className="text-muted-foreground flex items-center justify-between gap-2 text-xs">
-          <span className="truncate font-mono">@{profile.handle}</span>
+          <GreetingCycle className="min-w-0 font-mono" />
           <TimeCounter
             className="shrink-0 font-mono tabular-nums"
             timeZone={profile.timezone}
