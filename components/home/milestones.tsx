@@ -1,16 +1,12 @@
-import { Trophy } from "lucide-react"
-
 import { SectionHeading } from "@/components/layout/section-heading"
 import { achievements } from "@/lib/content/milestones"
 import { sectionIds } from "@/lib/content/site"
 
 function Row({
-  icon,
   title,
   meta,
   description,
 }: {
-  icon: React.ReactNode
   title: string
   meta: string
   description: string
@@ -18,9 +14,13 @@ function Row({
   return (
     <li className="screen-line-bottom relative last:after:hidden">
       <div className="flex gap-3 p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40">
-        <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 p-1 text-neutral-600 ring ring-neutral-300 ring-offset-1 ring-offset-white dark:border-neutral-700/60 dark:bg-neutral-800 dark:text-neutral-300 dark:ring-neutral-700/60 dark:ring-offset-black">
-          {icon}
-        </span>
+        {/* A drawn dot rather than a real list marker: the row keeps its
+            full-bleed hover and divider, which `list-disc` would inset.
+            Nudged down to sit on the title's first line. */}
+        <span
+          aria-hidden
+          className="mt-2 size-1.5 shrink-0 rounded-full bg-neutral-700 dark:bg-neutral-300"
+        />
 
         <div className="min-w-0 flex-1 space-y-1">
           <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
@@ -48,7 +48,6 @@ export function Achievements() {
         {achievements.map((item) => (
           <Row
             key={item.title}
-            icon={<Trophy className="size-full" aria-hidden />}
             title={item.title}
             meta={item.date}
             description={item.description}
