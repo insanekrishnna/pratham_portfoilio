@@ -4,7 +4,11 @@ export const profile = {
   wordmark: "PRATHAM",
   title: "Full Stack Developer",
   /** Rotated by the hero typewriter. */
-  roles: ["Full Stack Developer", "Designer", "Freelancer"],
+  roles: [
+    "Software Engineer",
+    "Product & Design Engineer",
+    "Growth & GTM",
+  ],
   meta: "Indore, IND",
   age: 20,
   location: "Indore, India",
@@ -25,10 +29,10 @@ export const profile = {
  */
 export const bio: { text: string; strong?: string[] }[] = [
   {
-    text: "i break things, learn fast, and make shit happen. limits exist to be tested; polymath thinking and psychology books shaped me. Mastery is non-negotiable.",
+    text: "I’m Pratham (call me insanekrishnna) - a Design Engineer with 2+ years of experience, known for pixel-perfect execution and an obsessive attention to detail.",
   },
   {
-    text: "I build products end to end with React, Next.js, TypeScript and Node.js — from schema and API design through to the interface.",
+    text: "I build products end to end with React, Next.js, TypeScript and Node.js - from schema and API design through to the interface.",
     strong: ["React, Next.js, TypeScript and Node.js"],
   },
   {
