@@ -42,11 +42,11 @@ export default function HomePage() {
       <HatchRule />
       <Writing />
 
-      {/* Brings its own hatch rule. */}
-      <SkillsVenn />
-
-      <HatchRule />
-      <CTA />
+      {/* Brings its own rule; the CTA sits inside its frame, with no
+          divider between the circles and the invitation. */}
+      <SkillsVenn>
+        <CTA />
+      </SkillsVenn>
     </main>
   )
 }

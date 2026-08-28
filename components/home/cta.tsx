@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 
-import { SectionHeading } from "@/components/layout/section-heading"
 import { profile } from "@/lib/content/profile"
 import { sectionIds } from "@/lib/content/site"
 
@@ -12,10 +11,13 @@ import { sectionIds } from "@/lib/content/site"
  */
 export function CTA() {
   return (
-    <section aria-labelledby={sectionIds.contact}>
-      <SectionHeading id={sectionIds.contact}>Scrolled this far</SectionHeading>
-
-      <div className="flex w-full flex-col items-center px-5 py-10 sm:px-10">
+    // No heading and no section of its own: this closes out the Ikigai
+    // block above rather than opening a new one, so the circles and the
+    // invitation read as a single panel with no rule between them.
+    <div
+      id={sectionIds.contact}
+      className="flex w-full flex-col items-center px-5 pt-2 pb-10 sm:px-10"
+    >
         <p className="mb-5 text-center text-sm text-balance opacity-70 md:text-lg">
           Still reading? That means something clicked. Let’s talk.
         </p>
@@ -47,9 +49,8 @@ export function CTA() {
               Book a free call
             </span>
           </span>
-        </Link>
-      </div>
-    </section>
+      </Link>
+    </div>
   )
 }
 

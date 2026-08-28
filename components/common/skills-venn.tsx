@@ -8,6 +8,8 @@ type SkillsVennProps = {
   profileImage?: string
   skills?: { top: string; left: string; right: string; bottom: string }
   className?: string
+  /** Rendered inside the same frame, below the circles. */
+  children?: React.ReactNode
 }
 
 /**
@@ -19,6 +21,7 @@ export function SkillsVenn({
   profileImage = skillsVenn.image,
   skills = skillsVenn.skills,
   className,
+  children,
 }: SkillsVennProps) {
   return (
     <div>
@@ -76,6 +79,8 @@ export function SkillsVenn({
             </div>
           </div>
         </div>
+
+        {children}
       </section>
     </div>
   )
