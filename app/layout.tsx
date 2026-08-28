@@ -112,9 +112,9 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
   icons: {
-    icon: "/favicon?v=1",
-    shortcut: "/favicon?v=1",
-    apple: "/favicon?v=1",
+    icon: "/favicon?v=3",
+    shortcut: "/favicon?v=3",
+    apple: "/favicon?v=3",
   },
   category: "technology",
   classification: "Portfolio Website",
