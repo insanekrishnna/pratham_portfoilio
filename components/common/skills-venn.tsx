@@ -12,7 +12,7 @@ type SkillsVennProps = {
 
 /**
  * Four overlapping circles in a diamond, with the portrait sitting in the
- * shared centre — the disciplines are what meet there. Everything is
+ * shared centre - the disciplines are what meet there. Everything is
  * percentage-positioned inside a square box so it scales as one unit.
  */
 export function SkillsVenn({

@@ -41,7 +41,7 @@ export function Navbar() {
               <span className="font-pixel text-2xl leading-none tracking-wide uppercase">
                 {profile.wordmark}
               </span>
-              <span className="sr-only">— home</span>
+              <span className="sr-only">- home</span>
             </Link>
 
             <div className="flex items-center gap-2 md:gap-4">

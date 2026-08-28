@@ -22,7 +22,7 @@ const icons: Record<
 
 /**
  * Every way to reach me, as the same solid button the hero uses. These
- * are deliberately static — the magnetic lean belongs to the two calls
+ * are deliberately static - the magnetic lean belongs to the two calls
  * to action up top, and six of them moving at once would be noise.
  */
 export function Connect() {

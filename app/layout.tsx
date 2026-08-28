@@ -153,7 +153,7 @@ export default function RootLayout({
         {/* Satoshi lives on Fontshare, not Google Fonts, so next/font
             cannot self-host it. The `@variable` sheet ends with a
             300..900 face; declared last, it wins font matching for every
-            weight, so one file covers the lot — including the 600 that
+            weight, so one file covers the lot - including the 600 that
             the static weights skip. */}
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link

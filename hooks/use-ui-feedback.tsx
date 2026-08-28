@@ -34,7 +34,7 @@ type Feedback = {
 const FeedbackContext = createContext<Feedback | null>(null)
 
 /**
- * Interaction feedback for deliberate, state-changing actions only —
+ * Interaction feedback for deliberate, state-changing actions only -
  * theme switches, command-menu selections, form submits. Never hover.
  *
  * Sound is on by default and mutable from the command menu. Every path
@@ -124,7 +124,7 @@ export function UiFeedbackProvider({ children }: { children: React.ReactNode }) 
         const next = !soundEnabled
         setSoundEnabled(next)
         if (next) {
-          // Confirm the choice audibly — this is the enabling gesture.
+          // Confirm the choice audibly - this is the enabling gesture.
           const audio = audioRef.current ?? new Audio(CLICK_SOUND)
           audio.volume = CLICK_VOLUME
           audioRef.current = audio

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 /**
  * A 24px band of diagonal hatching bounded by hairlines, running the
- * full viewport width. It is the site's primary section break — the
+ * full viewport width. It is the site's primary section break - the
  * visual equivalent of a paragraph gap.
  */
 export function HatchRule({ className }: { className?: string }) {
@@ -22,7 +22,7 @@ export function HatchRule({ className }: { className?: string }) {
 
 /**
  * A single full-bleed hairline. Used where a hatch band would be too
- * heavy — between rows inside a section.
+ * heavy - between rows inside a section.
  */
 export function ScreenRule({ className }: { className?: string }) {
   return (

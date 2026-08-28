@@ -18,7 +18,7 @@ export function Hero() {
 
       {/* Same top padding as the portrait's box, so the first line of
           text sits on the portrait's top edge instead of centring
-          against it — the avatar column is taller now that it carries
+          against it - the avatar column is taller now that it carries
           the switch beneath the image. */}
       <div className="flex min-w-0 flex-1 flex-col gap-0 pt-3 sm:pt-4">
         <h1 className="text-xl font-medium text-neutral-700 md:text-2xl dark:text-neutral-50">
@@ -35,7 +35,7 @@ export function Hero() {
             label="Book a call"
             icon={
               // The button ground inverts with the theme, so the yellow
-              // has to as well — 400 on the black fill, 600 on the white.
+              // has to as well - 400 on the black fill, 600 on the white.
               <Video
                 className="size-3.5 shrink-0 text-yellow-400 dark:text-yellow-600"
                 aria-hidden

@@ -29,7 +29,7 @@ type MagneticButtonProps = {
 
 /**
  * A chip whose contents lean toward the pointer and spring back when it
- * leaves. The button itself never moves — only the label inside it — so
+ * leaves. The button itself never moves - only the label inside it - so
  * the hit area stays exactly where it looks, and the travel is clamped
  * to the padding so the text never touches the border.
  *
@@ -142,7 +142,7 @@ export function MagneticButton({
       className={cn(contactButtonClass, className)}
     >
       {/* pointer-events off so the chip, not the moving label, is the
-          hit target — otherwise the lean chases its own hover. */}
+          hit target - otherwise the lean chases its own hover. */}
       <span
         ref={contentRef}
         className="pointer-events-none inline-flex items-center gap-[5px]"

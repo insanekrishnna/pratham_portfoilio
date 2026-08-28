@@ -25,7 +25,7 @@ export const profile = {
 
 /**
  * The About list. `strong` fragments are rendered as emphasised,
- * underlined spans — the same treatment the headline keywords get.
+ * underlined spans - the same treatment the headline keywords get.
  */
 export const bio: { text: string; strong?: string[] }[] = [
   {

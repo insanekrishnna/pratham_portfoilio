@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: "Finveda",
     subheading: "Personal finance, visualised",
     description:
-      "Finveda helps users track income and spending through visual breakdowns, period comparisons and insights, with goal-based planning — built as an accessible React application with strict TypeScript patterns and a scalable UI architecture using Zod and React Query.",
+      "Finveda helps users track income and spending through visual breakdowns, period comparisons and insights, with goal-based planning - built as an accessible React application with strict TypeScript patterns and a scalable UI architecture using Zod and React Query.",
     image: "/finveda.jpg",
     video: "/finveda.mp4",
     links: {

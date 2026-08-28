@@ -3,7 +3,7 @@
 import { TextCycle } from "@/components/common/text-cycle"
 
 /**
- * Each role is shown in full and then rolls up out of the way — the same
+ * Each role is shown in full and then rolls up out of the way - the same
  * motion the greeting uses, so the two lines of the hero read as one
  * idea rather than two competing effects.
  */

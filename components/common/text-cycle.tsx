@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export type CycleItem = { text: string; lang?: string }
 
 /**
- * Rolls through a list of phrases, one whole phrase at a time — nothing
+ * Rolls through a list of phrases, one whole phrase at a time - nothing
  * is typed or deleted a character at a time.
  *
  * The outgoing and incoming lines move *together*, stacked on top of one

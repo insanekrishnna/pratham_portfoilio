@@ -10,7 +10,7 @@ import { profile } from "@/lib/content/profile"
 const directRoutes = [
   {
     name: "Book a 30-minute call",
-    detail: "Calendly — pick any open slot",
+    detail: "Calendly - pick any open slot",
     href: profile.calendlyUrl,
     icon: Calendar,
   },
@@ -80,7 +80,7 @@ export function ContactPage() {
       <div className="px-4 py-8 sm:px-6">
         <p className="text-muted-foreground mb-6 max-w-prose text-sm leading-relaxed">
           Write here and it lands in my inbox. Roles, freelance work, or a
-          question about something I've built — all welcome.
+          question about something I've built - all welcome.
         </p>
         <ContactForm />
       </div>

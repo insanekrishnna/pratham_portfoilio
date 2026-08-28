@@ -8,7 +8,7 @@ import { sectionIds } from "@/lib/content/site"
 
 /**
  * Closing call to action. The avatar makes room for a second face on
- * hover — the whole point of the button in one small gesture.
+ * hover - the whole point of the button in one small gesture.
  */
 export function CTA() {
   return (

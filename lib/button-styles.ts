@@ -6,7 +6,7 @@
  * dark one, and `text-background` is always its opposite, so the pair
  * flips on its own with no `dark:` overrides.
  *
- * Shared by the hero's magnetic buttons and the static Connect ones —
+ * Shared by the hero's magnetic buttons and the static Connect ones -
  * the two must not drift, and only the movement differs between them.
  */
 export const contactButtonClass =

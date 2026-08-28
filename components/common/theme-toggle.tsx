@@ -23,7 +23,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   // The reveal expands from the button's own rect, so the shortcut clicks
   // the real button rather than calling setTheme and skipping the
   // animation. A synthetic click fires no pointerdown, though, so the
-  // global click sound misses it — hence the explicit tap here.
+  // global click sound misses it - hence the explicit tap here.
   const toggleTheme = useCallback(() => {
     tap()
     wrapperRef.current?.querySelector("button")?.click()
@@ -59,7 +59,7 @@ export function ThemeToggle({ className }: { className?: string }) {
             variant="circle"
             // Controlled: next-themes stays the source of truth and handles
             // persistence. Before mount resolvedTheme is undefined, so this
-            // reports light — matching the moon icon the server rendered.
+            // reports light - matching the moon icon the server rendered.
             theme={isDark ? "dark" : "light"}
             onThemeChange={setTheme}
             aria-label={

@@ -14,7 +14,7 @@ export default function NotFound() {
           This page doesn&apos;t exist
         </h1>
         <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
-          The link may be out of date. Everything lives on the home page — start
+          The link may be out of date. Everything lives on the home page - start
           there, or search with ⌘K.
         </p>
         <Button asChild className="mt-2">

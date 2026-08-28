@@ -18,7 +18,7 @@ export async function GET() {
   // No from/to on purpose. Passing them meant sending `new Date()` as a
   // UTC instant, so before 05:30 IST the window ended on *yesterday* and
   // today's contributions were dropped. Omitting the range makes GitHub
-  // use its own trailing year in the account's timezone — the identical
+  // use its own trailing year in the account's timezone - the identical
   // window github.com/<login> renders, so the totals always agree.
   const query = `
     query($login: String!) {

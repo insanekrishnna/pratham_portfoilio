@@ -58,8 +58,8 @@ export function Stack() {
           return (
             <li key={skill.title} className="flex">
               {/* A button, not a link: these are labels, and clicking one
-                  should feel live — hover, focus ring, the interface click
-                  — without navigating away from the page. */}
+                  should feel live - hover, focus ring, the interface click
+                  - without navigating away from the page. */}
               <button
                 type="button"
                 className="focus-visible:ring-ring/50 bg-background border-border flex cursor-pointer items-center gap-1.5 rounded-md border px-2 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors select-none hover:border-neutral-400 focus-visible:ring-[3px] dark:hover:border-neutral-600"

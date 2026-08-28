@@ -25,7 +25,7 @@ const MAX_TILT_SPEED = 1500
  * behind. The label also tilts with horizontal velocity, which is what
  * makes fast flicks read as weight rather than as lag.
  *
- * Coarse pointers get nothing — a touch device has no cursor to replace.
+ * Coarse pointers get nothing - a touch device has no cursor to replace.
  */
 export function UserCursor({
   name = "hi",

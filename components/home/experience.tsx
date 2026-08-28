@@ -6,7 +6,7 @@ import { sectionIds } from "@/lib/content/site"
 
 /**
  * One line per role: logo, company, "role • location", and the dates
- * pushed to the trailing edge. Deliberately free of detail — the resume
+ * pushed to the trailing edge. Deliberately free of detail - the resume
  * carries the long form.
  */
 function ExperienceRow({ experience }: { experience: Experience }) {
@@ -48,7 +48,7 @@ function ExperienceRow({ experience }: { experience: Experience }) {
           </h3>
 
           <p className="text-muted-foreground shrink-0 text-xs tabular-nums">
-            {experience.period.start} — {experience.period.end ?? "Present"}
+            {experience.period.start} - {experience.period.end ?? "Present"}
           </p>
         </div>
 

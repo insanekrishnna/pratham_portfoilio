@@ -3,7 +3,7 @@ export type Experience = {
   company: string
   role: string
   location: string
-  /** Rendered as "start — end"; omit `end` for an ongoing role. */
+  /** Rendered as "start - end"; omit `end` for an ongoing role. */
   period: { start: string; end?: string }
   logo?: string
   website?: string

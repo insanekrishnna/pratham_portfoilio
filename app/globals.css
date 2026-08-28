@@ -6,7 +6,7 @@
 /* ─────────────────────────────────────────────────────────────
    Design tokens
 
-   The theme derives from two anchors — --base and
+   The theme derives from two anchors - --base and
    --base-foreground. Every surface, border and text colour is a
    mix of those two, so contrast stays consistent across themes
    and components never need one-off colour values.

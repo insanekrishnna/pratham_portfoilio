@@ -22,7 +22,7 @@ export function AvatarSwitch() {
         <div className="border-border relative box-border size-14 overflow-hidden rounded-[7px] border bg-neutral-200 p-0.5 select-none sm:size-20 md:size-21 dark:bg-neutral-800">
           <Image
             src={profile.avatar}
-            alt={`${profile.name} — ${profile.title}`}
+            alt={`${profile.name} - ${profile.title}`}
             width={120}
             height={120}
             priority
@@ -33,7 +33,7 @@ export function AvatarSwitch() {
           />
           <Image
             src={profile.avatarPhoto}
-            alt={`${profile.name} — photo`}
+            alt={`${profile.name} - photo`}
             width={120}
             height={120}
             aria-hidden={!showPhoto}

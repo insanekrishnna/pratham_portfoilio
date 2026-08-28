@@ -1,7 +1,7 @@
 export type Post = {
   slug: string
   title: string
-  /** Optional — the card collapses the description row when absent. */
+  /** Optional - the card collapses the description row when absent. */
   description?: string
   image: string
   href: string

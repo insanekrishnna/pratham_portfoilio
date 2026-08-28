@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
-/** Grid pitch. Fine on purpose — the field should read as a texture. */
+/** Grid pitch. Fine on purpose - the field should read as a texture. */
 const SPACING = 9
 const DOT_SIZE = 2
 /** Cursor push: radius, and peak force at the centre of it. */
@@ -34,7 +34,7 @@ type Ripple = { x: number; y: number; time: number }
 
 /**
  * A dot grid that gets pushed out of the way by the pointer and springs
- * back. Each dot is a real particle — force, velocity, position — not a
+ * back. Each dot is a real particle - force, velocity, position - not a
  * transform read straight off cursor distance, which is why the field
  * keeps moving after the pointer has gone and settles rather than stops.
  *
@@ -67,7 +67,7 @@ export function InteractiveDots({ className }: { className?: string }) {
     let sprites: HTMLCanvasElement[] = []
 
     // --dot-ink is authored as bare "r g b" channels. The theme colours
-    // are oklch, and getComputedStyle hands those back still in oklch —
+    // are oklch, and getComputedStyle hands those back still in oklch -
     // which canvas cannot take and a naive digit scrape turns green.
     const readInk = () => {
       const raw = getComputedStyle(document.documentElement)
