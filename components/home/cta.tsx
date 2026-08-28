@@ -16,7 +16,10 @@ export function CTA() {
     // invitation read as a single panel with no rule between them.
     <div
       id={sectionIds.contact}
-      className="flex w-full flex-col items-center px-5 pt-2 pb-10 sm:px-10"
+      // No bottom padding of its own: the venn section's py-8 closes the
+      // panel, so the gap under the button matches the one above the
+      // circles. Adding any here would double up against it.
+      className="flex w-full flex-col items-center px-5 pt-2 pb-0 sm:px-10"
     >
         <p className="mb-5 text-center text-sm text-balance opacity-70 md:text-lg">
           Still reading? That means something clicked. Let’s talk.
