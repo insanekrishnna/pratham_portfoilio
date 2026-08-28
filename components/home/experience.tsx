@@ -11,7 +11,7 @@ import { sectionIds } from "@/lib/content/site"
  */
 function ExperienceRow({ experience }: { experience: Experience }) {
   return (
-    <li className="flex items-center gap-4">
+    <li className="flex items-center gap-3">
       <span className="flex size-10 shrink-0 items-center justify-center select-none">
         {experience.logo ? (
           <Image
@@ -26,9 +26,13 @@ function ExperienceRow({ experience }: { experience: Experience }) {
         )}
       </span>
 
-      <div className="flex min-w-0 flex-1 flex-col gap-x-4 gap-y-0.5 sm:flex-row sm:items-baseline sm:justify-between">
-        <div className="min-w-0">
-          <h3 className="text-foreground text-base leading-snug font-semibold">
+      {/* Two lines at every width: company and dates share the first,
+          role and location take the second. The dates used to drop below
+          the role on small screens, which is what pushed each entry to
+          three lines on a phone. */}
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="text-foreground min-w-0 truncate text-[15px] leading-snug font-semibold">
             {experience.website ? (
               <a
                 href={experience.website}
@@ -43,13 +47,13 @@ function ExperienceRow({ experience }: { experience: Experience }) {
             )}
           </h3>
 
-          <p className="text-muted-foreground text-sm leading-snug">
-            {experience.role} <span aria-hidden>•</span> {experience.location}
+          <p className="text-muted-foreground shrink-0 text-xs tabular-nums">
+            {experience.period.start} — {experience.period.end ?? "Present"}
           </p>
         </div>
 
-        <p className="text-muted-foreground shrink-0 text-sm tabular-nums sm:text-right">
-          {experience.period.start} — {experience.period.end ?? "Present"}
+        <p className="text-muted-foreground truncate text-[13px] leading-snug">
+          {experience.role} <span aria-hidden>•</span> {experience.location}
         </p>
       </div>
     </li>
