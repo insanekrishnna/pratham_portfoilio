@@ -44,7 +44,6 @@ function Preview({ project }: { project: Project }) {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  const isLive = project.status === "live"
   const { website, github } = project.links
   const primaryHref = website ?? github
 
@@ -58,22 +57,10 @@ export function ProjectCard({ project }: { project: Project }) {
       >
         <Preview project={project} />
 
-        <div className="mt-2.5 flex items-center justify-between gap-2 px-1 pt-0.5">
+        <div className="mt-2.5 px-1 pt-0.5">
           <h3 className="group-hover/card:text-primary text-lg leading-snug font-bold">
             {project.title}
           </h3>
-          <span className="flex shrink-0 items-center gap-1.5 select-none">
-            <span
-              className={cn(
-                "inline-flex size-2 rounded-full",
-                isLive ? "bg-live" : "bg-building"
-              )}
-              aria-hidden
-            />
-            <span className="text-muted-foreground text-xs font-medium">
-              {isLive ? "Live" : "Building"}
-            </span>
-          </span>
         </div>
 
         {project.subheading && (
