@@ -26,7 +26,7 @@ export const skillsVenn = {
   skills: {
     top: "Frontend Architecture",
     left: "Design Systems",
-    right: "Developer Tooling",
+    right: "Growth & GTM",
     bottom: "Product Thinking\n& User Research",
   },
 }
