@@ -1,9 +1,21 @@
+import { Braces, Code2, Database, type LucideIcon } from "lucide-react"
 import * as simpleIcons from "simple-icons"
 import type { SimpleIcon } from "simple-icons"
 
 import { SectionHeading } from "@/components/layout/section-heading"
 import { stack } from "@/lib/content/stack"
 import { sectionIds } from "@/lib/content/site"
+
+/**
+ * SQL and REST are specifications, not products, and VS Code's mark is
+ * a Microsoft trademark that simple-icons does not carry. All three get
+ * a neutral mark in the text colour rather than a borrowed brand.
+ */
+const GENERIC: Record<string, LucideIcon | undefined> = {
+  "generic-sql": Database,
+  "generic-api": Braces,
+  "generic-editor": Code2,
+}
 
 /** Below this relative luminance a brand colour disappears on black. */
 const TOO_DARK = 0.22
@@ -40,7 +52,8 @@ export function Stack() {
 
       <ul className="flex flex-wrap gap-2 px-5 py-7 sm:px-6">
         {skills.map((skill) => {
-          const icon = lookup(skill.icon)
+          const Generic = GENERIC[skill.icon]
+          const icon = Generic ? undefined : lookup(skill.icon)
 
           return (
             <li key={skill.title} className="flex">
@@ -50,6 +63,12 @@ export function Stack() {
                 rel="noopener noreferrer"
                 className="focus-visible:ring-ring/50 bg-background border-border flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors select-none hover:border-neutral-400 focus-visible:ring-[3px] dark:hover:border-neutral-600"
               >
+                {Generic && (
+                  <Generic
+                    aria-hidden
+                    className="text-muted-foreground size-3.5 shrink-0"
+                  />
+                )}
                 {icon && (
                   <svg
                     viewBox="0 0 24 24"

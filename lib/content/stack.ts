@@ -1,7 +1,10 @@
 export type StackCategory = {
   id: string
   category: string
-  /** `icon` is a simple-icons slug, resolved to a path at render. */
+  /**
+   * `icon` is a simple-icons slug, or one of the generic keys the Stack
+   * component maps to a neutral mark for things that have no brand.
+   */
   skills: { title: string; href: string; icon: string }[]
 }
 
@@ -20,7 +23,22 @@ export const stack: StackCategory[] = [
         href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
         icon: "javascript",
       },
-      { title: "Python", href: "https://www.python.org/", icon: "python" },
+      { title: "C/C++", href: "https://isocpp.org/", icon: "cplusplus" },
+      {
+        title: "SQL",
+        href: "https://en.wikipedia.org/wiki/SQL",
+        icon: "generic-sql",
+      },
+      {
+        title: "HTML",
+        href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        icon: "html5",
+      },
+      {
+        title: "CSS",
+        href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        icon: "css",
+      },
     ],
   },
   {
@@ -39,43 +57,42 @@ export const stack: StackCategory[] = [
   },
   {
     id: "03",
-    category: "Backend & Database",
+    category: "Backend & Databases",
     skills: [
       { title: "Node.js", href: "https://nodejs.org/", icon: "nodedotjs" },
       { title: "Express.js", href: "https://expressjs.com/", icon: "express" },
-      { title: "MongoDB", href: "https://www.mongodb.com/", icon: "mongodb" },
+      {
+        title: "REST APIs",
+        href: "https://developer.mozilla.org/en-US/docs/Glossary/REST",
+        icon: "generic-api",
+      },
       {
         title: "PostgreSQL",
         href: "https://www.postgresql.org/",
         icon: "postgresql",
       },
-      {
-        title: "Firebase",
-        href: "https://firebase.google.com/",
-        icon: "firebase",
-      },
+      { title: "MongoDB", href: "https://www.mongodb.com/", icon: "mongodb" },
+      { title: "Redis", href: "https://redis.io/", icon: "redis" },
+      { title: "Prisma", href: "https://www.prisma.io/", icon: "prisma" },
       { title: "Supabase", href: "https://supabase.com/", icon: "supabase" },
     ],
   },
   {
     id: "04",
-    category: "Workflow & Tools",
+    category: "Tools & Platforms",
     skills: [
       { title: "Git", href: "https://git-scm.com/", icon: "git" },
+      { title: "GitHub", href: "https://github.com/", icon: "github" },
       { title: "Docker", href: "https://www.docker.com/", icon: "docker" },
-      { title: "Vercel", href: "https://vercel.com/", icon: "vercel" },
+      { title: "Postman", href: "https://www.postman.com/", icon: "postman" },
       {
-        title: "Postman API",
-        href: "https://www.postman.com/",
-        icon: "postman",
+        title: "VS Code",
+        href: "https://code.visualstudio.com/",
+        icon: "generic-editor",
       },
-    ],
-  },
-  {
-    id: "05",
-    category: "Unofficially",
-    skills: [
-      { title: "Shitposter", href: "https://x.com/insanekrishnaa", icon: "x" },
+      { title: "Cursor", href: "https://cursor.com/", icon: "cursor" },
+      { title: "Vercel", href: "https://vercel.com/", icon: "vercel" },
+      { title: "Figma", href: "https://www.figma.com/", icon: "figma" },
     ],
   },
 ]
