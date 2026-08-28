@@ -29,6 +29,7 @@
     "nodemailer": "^7.0.11",
     "react": "^19",
     "react-dom": "^19",
+    "simple-icons": "^16.28.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "use-sound": "^5.0.0"
