@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react"
 import { AvatarSwitch } from "@/components/home/avatar-switch"
 import { GreetingCycle } from "@/components/home/greeting-cycle"
 import { TimeCounter } from "@/components/common/time-counter"
-import { RoleTypewriter } from "@/components/home/role-typewriter"
+import { RoleCycle } from "@/components/home/role-cycle"
 import { profile } from "@/lib/content/profile"
 
 /**
@@ -37,7 +37,7 @@ export function Hero() {
         </h1>
 
         <p className="flex min-h-6 items-center text-sm font-medium text-neutral-500/80 md:text-base dark:text-neutral-400">
-          <RoleTypewriter roles={profile.roles} />
+          <RoleCycle roles={profile.roles} />
         </p>
 
         <p className="flex items-center gap-1 text-xs font-medium text-neutral-500/80 dark:text-neutral-400">
