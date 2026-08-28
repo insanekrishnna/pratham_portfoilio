@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
+import { contactButtonClass } from "@/lib/button-styles"
 import { cn } from "@/lib/utils"
 
 /** Fraction of the cursor offset the label is allowed to chase. */
@@ -138,14 +139,7 @@ export function MagneticButton({
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
-      // The skill chip's geometry, inverted: `bg-foreground` is near-black
-      // in the light theme and near-white in the dark one, and
-      // `text-background` is always its opposite, so the pair flips with
-      // the theme on its own. The border stays for an identical box.
-      className={cn(
-        "focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center overflow-hidden rounded-md border border-transparent px-2 py-1 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px]",
-        className
-      )}
+      className={cn(contactButtonClass, className)}
     >
       {/* pointer-events off so the chip, not the moving label, is the
           hit target — otherwise the lean chases its own hover. */}
