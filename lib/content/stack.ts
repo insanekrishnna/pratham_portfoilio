@@ -4,6 +4,10 @@ export type StackCategory = {
   /**
    * `icon` is a simple-icons slug, or one of the generic keys the Stack
    * component maps to a neutral mark for things that have no brand.
+   *
+   * `href` is kept as a reference but is deliberately not rendered — the
+   * chips are buttons that go nowhere. Switch them back to links and it
+   * is already here.
    */
   skills: { title: string; href: string; icon: string }[]
 }
