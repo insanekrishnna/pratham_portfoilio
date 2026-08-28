@@ -40,7 +40,7 @@ export function About() {
   return (
     <section aria-labelledby={sectionIds.about}>
       <SectionHeading id={sectionIds.about}>About</SectionHeading>
-      <div className="px-6 py-7 sm:px-8 sm:py-8">
+      <div className="px-5 py-5 sm:px-6 sm:py-6">
         <ul className="list-disc space-y-2.5 pl-4 text-base leading-relaxed font-normal text-neutral-800 dark:text-neutral-300">
           {bio.map((line) => (
             <li key={line.text}>{withEmphasis(line.text, line.strong)}</li>

@@ -12,7 +12,7 @@ import { profile } from "@/lib/content/profile"
 export function Hero() {
   return (
     <header className="flex w-full items-start">
-      <div className="p-4 sm:p-5">
+      <div className="p-3 sm:p-4">
         <AvatarSwitch />
       </div>
 
@@ -20,7 +20,7 @@ export function Hero() {
           text sits on the portrait's top edge instead of centring
           against it — the avatar column is taller now that it carries
           the switch beneath the image. */}
-      <div className="flex min-w-0 flex-1 flex-col gap-0 pt-4 sm:pt-5">
+      <div className="flex min-w-0 flex-1 flex-col gap-0 pt-3 sm:pt-4">
         <div className="text-muted-foreground flex items-center justify-end text-xs">
           <TimeCounter
             className="shrink-0 font-mono tabular-nums"
@@ -28,7 +28,7 @@ export function Hero() {
           />
         </div>
 
-        <h1 className="text-2xl font-medium text-neutral-700 md:pb-0.5 md:text-3xl dark:text-neutral-50">
+        <h1 className="text-xl font-medium text-neutral-700 md:pb-0.5 md:text-2xl dark:text-neutral-50">
           {profile.name}
         </h1>
 

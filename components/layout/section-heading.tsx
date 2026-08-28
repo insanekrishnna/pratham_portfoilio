@@ -21,13 +21,13 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1.5",
+        "screen-line-bottom relative flex w-full items-center justify-between gap-4 px-4 py-1",
         className
       )}
     >
       <Tag
         id={id}
-        className="scroll-mt-20 text-2xl font-normal tracking-tight sm:text-3xl"
+        className="scroll-mt-20 text-xl font-normal tracking-tight sm:text-2xl"
       >
         {children}
       </Tag>
@@ -39,8 +39,8 @@ export function SectionHeading({
 /** Small uppercase-adjacent label used above page titles. */
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="screen-line-bottom relative w-full px-4 py-1.5">
-      <p className="text-2xl font-medium text-neutral-400 sm:text-3xl dark:text-neutral-500">
+    <div className="screen-line-bottom relative w-full px-4 py-1">
+      <p className="text-xl font-medium text-neutral-400 sm:text-2xl dark:text-neutral-500">
         {children}
       </p>
     </div>

@@ -62,7 +62,7 @@ export function ExperienceSection() {
       <SectionHeading id={sectionIds.experience} className="pb-2">
         Experience
       </SectionHeading>
-      <ul className="space-y-7 px-5 py-7 sm:px-8">
+      <ul className="space-y-5 px-4 py-5 sm:px-6">
         {experiences.map((experience) => (
           <ExperienceRow key={experience.id} experience={experience} />
         ))}

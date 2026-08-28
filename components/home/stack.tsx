@@ -50,7 +50,7 @@ export function Stack() {
     <section aria-labelledby={sectionIds.stack}>
       <SectionHeading id={sectionIds.stack}>Skills</SectionHeading>
 
-      <ul className="flex flex-wrap gap-2 px-5 py-7 sm:px-6">
+      <ul className="flex flex-wrap gap-2 px-4 py-5 sm:px-5">
         {skills.map((skill) => {
           const Generic = GENERIC[skill.icon]
           const icon = Generic ? undefined : lookup(skill.icon)

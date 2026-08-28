@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer>
       <HatchRule />
-      <div className="flex flex-col items-center justify-center py-8">
+      <div className="flex flex-col items-center justify-center py-6">
         <p className="text-foreground/70 text-center text-sm">
           {footer.text}{" "}
           <a
@@ -21,7 +21,7 @@ export function Footer() {
         </p>
       </div>
       <HatchRule />
-      <DotField className="h-40 min-h-28 sm:h-48" />
+      <DotField className="h-28 min-h-20 sm:h-32" />
     </footer>
   )
 }

@@ -12,7 +12,7 @@ export function DotField({
   children?: React.ReactNode
 }) {
   return (
-    <div className="screen-line-bottom relative w-full py-3">
+    <div className="screen-line-bottom relative w-full py-2">
       <div
         className={cn(
           "flex w-full items-center justify-center bg-center bg-[length:10px_10px] px-1.5",

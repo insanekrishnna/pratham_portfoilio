@@ -50,7 +50,7 @@ export function RuledRow({
   return (
     <div
       className={cn(
-        "screen-line-top screen-line-bottom relative flex w-full items-center justify-center gap-2 px-4 py-2.5",
+        "screen-line-top screen-line-bottom relative flex w-full items-center justify-center gap-2 px-4 py-2",
         className
       )}
     >

@@ -15,8 +15,8 @@ export function CTA() {
     <section aria-labelledby={sectionIds.contact}>
       <SectionHeading id={sectionIds.contact}>Scrolled this far</SectionHeading>
 
-      <div className="flex w-full flex-col items-center px-6 py-14 sm:px-12">
-        <p className="mb-6 text-center text-base text-balance opacity-70 md:text-xl">
+      <div className="flex w-full flex-col items-center px-5 py-10 sm:px-10">
+        <p className="mb-5 text-center text-sm text-balance opacity-70 md:text-lg">
           Still reading? That means something clicked. Let’s talk.
         </p>
 

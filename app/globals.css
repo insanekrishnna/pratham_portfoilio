@@ -125,7 +125,7 @@
 }
 
 @theme inline {
-  --font-sans: "Google Sans Flex", ui-sans-serif, sans-serif;
+  --font-sans: Satoshi, ui-sans-serif, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-pixel: var(--font-pixelify);
 

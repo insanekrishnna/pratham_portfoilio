@@ -39,7 +39,7 @@ export function Connect() {
             const Icon = icons[item.icon]
             return (
               <li key={item.name}>
-                <div className="group relative flex items-center gap-3 p-4 pr-2 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40">
+                <div className="group relative flex items-center gap-3 p-3 pr-2 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40">
                   <div className="relative size-8 shrink-0">
                     <div className="flex size-8 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-[transform,color] duration-200 group-hover:scale-105 group-hover:text-neutral-900 dark:bg-neutral-800 dark:text-neutral-400 dark:group-hover:text-neutral-100">
                       <Icon className="size-[18px]" />

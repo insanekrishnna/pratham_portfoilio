@@ -18,8 +18,8 @@ export function AvatarSwitch() {
 
   return (
     <div className="flex w-fit flex-col items-center gap-2">
-      <div className="border-border w-fit rounded-[9px] border p-[3.8px] dark:border-neutral-700">
-        <div className="border-border relative box-border size-20 overflow-hidden rounded-[8px] border bg-neutral-200 p-1 select-none sm:size-28 md:size-30 dark:bg-neutral-800">
+      <div className="border-border w-fit rounded-[8px] border p-[2.7px] dark:border-neutral-700">
+        <div className="border-border relative box-border size-14 overflow-hidden rounded-[7px] border bg-neutral-200 p-0.5 select-none sm:size-20 md:size-21 dark:bg-neutral-800">
           <Image
             src={profile.avatar}
             alt={`${profile.name} — ${profile.title}`}

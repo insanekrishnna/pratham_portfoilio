@@ -126,7 +126,7 @@ export function GitHubActivity() {
     <section aria-labelledby={sectionIds.activity}>
       <SectionHeading id={sectionIds.activity}>Activity</SectionHeading>
 
-      <div className="relative px-4 py-6" onMouseLeave={() => setHovered(null)}>
+      <div className="relative px-4 py-5" onMouseLeave={() => setHovered(null)}>
         {hovered && (
           <div
             role="status"

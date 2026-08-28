@@ -22,7 +22,7 @@ export function PageHeader({
     <>
       <HatchRule />
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h1 className="screen-line-bottom relative px-4 py-2 text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+      <h1 className="screen-line-bottom relative px-4 py-1.5 text-xl font-semibold tracking-tight text-balance sm:text-2xl">
         {title}
       </h1>
       <div className="screen-line-bottom relative flex items-center justify-between gap-3 p-2">

@@ -150,19 +150,20 @@ export default function RootLayout({
       className={`${GeistMono.variable} ${pixelifySans.variable}`}
     >
       <head>
-        {/* Google Sans Flex is newer than the family list next/font ships
-            with, so it cannot be self-hosted through next/font and is
-            linked directly. Variable across opsz 8..144 and wght 1..1000,
-            so every weight and optical size costs one file. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Satoshi lives on Fontshare, not Google Fonts, so next/font
+            cannot self-host it. The `@variable` sheet ends with a
+            300..900 face; declared last, it wins font matching for every
+            weight, so one file covers the lot — including the 600 that
+            the static weights skip. */}
+        <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           rel="preconnect"
-          href="https://fonts.gstatic.com"
+          href="https://cdn.fontshare.com"
           crossOrigin="anonymous"
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,1..1000&display=swap"
+          href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@variable&display=swap"
         />
         <StructuredData />
       </head>

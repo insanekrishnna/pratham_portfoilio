@@ -15,7 +15,7 @@ import { CTA } from "@/components/home/cta"
 export default function HomePage() {
   return (
     <main>
-      <InteractiveDots className="screen-line-bottom h-32 w-full sm:h-40" />
+      <InteractiveDots className="screen-line-bottom h-24 w-full sm:h-32" />
       <Hero />
 
       <HatchRule />

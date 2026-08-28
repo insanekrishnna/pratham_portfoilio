@@ -39,7 +39,7 @@ export function Writing() {
             <li key={post.slug}>
               <article
                 className={cn(
-                  "group relative flex h-full gap-2 p-2 py-5 transition-colors hover:bg-neutral-100/60 md:py-2 dark:hover:bg-neutral-900/40",
+                  "group relative flex h-full gap-2 p-2 py-4 transition-colors hover:bg-neutral-100/60 md:py-2 dark:hover:bg-neutral-900/40",
                   isSingle ? "flex-col sm:flex-row sm:items-center" : "flex-col"
                 )}
               >

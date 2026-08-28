@@ -17,7 +17,7 @@ function Row({
 }) {
   return (
     <li className="screen-line-bottom relative last:after:hidden">
-      <div className="flex gap-3 p-4 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40">
+      <div className="flex gap-3 p-3 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900/40">
         <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 p-1 text-neutral-600 ring ring-neutral-300 ring-offset-1 ring-offset-white dark:border-neutral-700/60 dark:bg-neutral-800 dark:text-neutral-300 dark:ring-neutral-700/60 dark:ring-offset-black">
           {icon}
         </span>

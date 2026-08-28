@@ -25,7 +25,7 @@ export function SkillsVenn({
       <HatchRule />
       <section
         aria-label="Areas of focus"
-        className="border-border screen-line-top screen-line-bottom relative border-x px-6 py-12"
+        className="border-border screen-line-top screen-line-bottom relative border-x px-5 py-8"
       >
         <div
           className={cn(
