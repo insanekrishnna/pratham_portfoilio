@@ -11,7 +11,7 @@ export const achievements: Achievement[] = [
     description: "Pitched a vendor optimisation solution.",
   },
   {
-    title: "Winner - Ideathon 2025 (CDGI)",
+    title: "Winner - Ideathon 2025",
     date: "Nov 2025",
     description: "Built NextUp, judged best overall.",
   },

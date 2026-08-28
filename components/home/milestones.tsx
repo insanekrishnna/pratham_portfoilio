@@ -23,8 +23,11 @@ function Row({
         />
 
         <div className="min-w-0 flex-1 space-y-1">
-          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-            <h3 className="text-base leading-snug font-medium text-balance">
+          {/* No flex-wrap: it let the date drop onto its own line under a
+              long title. The title wraps inside its own box instead, and
+              the date holds the top right. */}
+          <div className="flex items-baseline justify-between gap-3">
+            <h3 className="min-w-0 text-base leading-snug font-medium text-balance">
               {title}
             </h3>
             <span className="text-muted-foreground shrink-0 font-mono text-xs tabular-nums">
