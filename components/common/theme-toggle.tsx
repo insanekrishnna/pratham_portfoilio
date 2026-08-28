@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
-import useSound from "use-sound"
 
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { buttonVariants } from "@/components/ui/button"
@@ -17,22 +16,18 @@ export function ThemeToggle({ className }: { className?: string }) {
   const { tap } = useUiFeedback()
   const wrapperRef = useRef<HTMLSpanElement>(null)
 
-  // `interrupt` restarts the clip instead of layering a second voice, so
-  // hammering the toggle stays one clean click rather than a smear.
-  const [playThemeSound] = useSound("/sounds/theme-toggle.mp3", {
-    volume: 0.1,
-    interrupt: true,
-  })
-
   useEffect(() => setMounted(true), [])
 
   const isDark = resolvedTheme === "dark"
 
   // The reveal expands from the button's own rect, so the shortcut clicks
-  // the real button rather than calling setTheme and skipping the animation.
+  // the real button rather than calling setTheme and skipping the
+  // animation. A synthetic click fires no pointerdown, though, so the
+  // global click sound misses it — hence the explicit tap here.
   const toggleTheme = useCallback(() => {
+    tap()
     wrapperRef.current?.querySelector("button")?.click()
-  }, [])
+  }, [tap])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -56,18 +51,10 @@ export function ThemeToggle({ className }: { className?: string }) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        {/* AnimatedThemeToggler owns its button's ref and onClick, so the
-            tooltip anchors to a wrapper and the tap fires on the bubble. */}
-        {/* Capture phase so the click is audible before the theme flips.
-            `silent` keeps tap() to haptics — the clip below is the sound. */}
-        <span
-          ref={wrapperRef}
-          onClickCapture={() => {
-            playThemeSound()
-            tap({ silent: true })
-          }}
-          className="inline-flex"
-        >
+        {/* AnimatedThemeToggler owns its button&apos;s ref and onClick, so
+            the tooltip anchors to a wrapper instead. The click sound is
+            handled globally by UiFeedbackProvider. */}
+        <span ref={wrapperRef} className="inline-flex">
           <AnimatedThemeToggler
             variant="circle"
             // Controlled: next-themes stays the source of truth and handles

@@ -50,10 +50,7 @@ export function AvatarSwitch() {
         role="switch"
         aria-checked={showPhoto}
         aria-label="Show real photo"
-        onClick={() => {
-          tap()
-          setShowPhoto((value) => !value)
-        }}
+        onClick={() => setShowPhoto((value) => !value)}
         className={cn(
           "focus-visible:ring-ring/50 relative h-[18px] w-8 shrink-0 cursor-pointer rounded-full border transition-colors outline-none focus-visible:ring-[3px]",
           showPhoto

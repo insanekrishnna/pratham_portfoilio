@@ -32,7 +32,6 @@ export function ContactForm() {
     event.preventDefault()
     if (state === "loading" || !canSubmit) return
 
-    tap()
     setState("loading")
     setFeedback(null)
 

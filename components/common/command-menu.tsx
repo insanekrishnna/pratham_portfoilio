@@ -71,11 +71,10 @@ export function CommandMenu({
 
   const run = useCallback(
     (action: () => void) => {
-      tap()
       onOpenChange(false)
       action()
     },
-    [onOpenChange, tap]
+    [onOpenChange]
   )
 
   return (

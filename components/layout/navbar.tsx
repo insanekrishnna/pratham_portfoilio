@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
 
 import { Container } from "@/components/layout/container"
+import { SoundToggle } from "@/components/common/sound-toggle"
 import { ThemeToggle } from "@/components/common/theme-toggle"
 import {
   CommandFloatingButton,
@@ -73,7 +74,11 @@ export function Navbar() {
                 className="bg-border hidden h-4 w-px md:block"
                 aria-hidden
               />
-              <ThemeToggle />
+              {/* Segmented pill: mute on the left, theme on the right. */}
+              <div className="flex h-8 items-center gap-0.5 rounded-full bg-black/5 p-0.5 dark:bg-neutral-800">
+                <SoundToggle />
+                <ThemeToggle className="size-7" />
+              </div>
 
               <div className="border-border border-l pl-1 md:hidden">
                 <DropdownMenu modal={false}>
