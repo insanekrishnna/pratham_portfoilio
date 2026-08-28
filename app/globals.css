@@ -246,10 +246,9 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     height: 1px;
-    width: 100vw;
+    width: 100%;
     background-color: var(--border);
     z-index: 1;
     pointer-events: none;
@@ -262,10 +261,9 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     height: 1px;
-    width: 100vw;
+    width: 100%;
     background-color: var(--border);
     z-index: 1;
     pointer-events: none;
@@ -285,9 +283,9 @@
     .connect-grid li:nth-child(2n + 1)::after {
       content: "";
       position: absolute;
-      left: -100vw;
+      left: 0;
       height: 1px;
-      width: 300vw;
+      width: 100%;
       background-color: var(--border);
       z-index: 1;
       pointer-events: none;
@@ -305,9 +303,9 @@
     .connect-grid li:nth-child(3n + 1)::after {
       content: "";
       position: absolute;
-      left: -100vw;
+      left: 0;
       height: 1px;
-      width: 300vw;
+      width: 100%;
       background-color: var(--border);
       z-index: 1;
       pointer-events: none;
@@ -330,9 +328,9 @@
     .rule-grid li::after {
       content: "";
       position: absolute;
-      left: -100vw;
+      left: 0;
       height: 1px;
-      width: 300vw;
+      width: 100%;
       background-color: var(--border);
       z-index: 1;
       pointer-events: none;
@@ -350,9 +348,9 @@
     .rule-grid li:nth-child(2n + 1)::after {
       content: "";
       position: absolute;
-      left: -100vw;
+      left: 0;
       height: 1px;
-      width: 300vw;
+      width: 100%;
       background-color: var(--border);
       z-index: 1;
       pointer-events: none;
