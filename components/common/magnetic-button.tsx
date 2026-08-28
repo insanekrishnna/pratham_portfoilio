@@ -138,9 +138,12 @@ export function MagneticButton({
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
-      // Same chip the skills use: bordered, rounded-md, slim padding.
+      // The skill chip's geometry, inverted: `bg-foreground` is near-black
+      // in the light theme and near-white in the dark one, and
+      // `text-background` is always its opposite, so the pair flips with
+      // the theme on its own. The border stays for an identical box.
       className={cn(
-        "focus-visible:ring-ring/50 bg-background border-border text-foreground inline-flex items-center justify-center overflow-hidden rounded-md border px-2 py-1 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-colors hover:border-neutral-400 focus-visible:ring-[3px] dark:hover:border-neutral-600",
+        "focus-visible:ring-ring/50 bg-foreground text-background inline-flex items-center justify-center overflow-hidden rounded-md border border-transparent px-2 py-1 text-xs leading-4 font-medium whitespace-nowrap outline-none transition-opacity hover:opacity-90 focus-visible:ring-[3px]",
         className
       )}
     >

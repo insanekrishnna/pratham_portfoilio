@@ -43,7 +43,12 @@ export function Hero() {
             href={profile.calendlyUrl}
             label="Book a call"
             icon={
-              <Video className="size-3.5 shrink-0 text-yellow-400" aria-hidden />
+              // The button ground inverts with the theme, so the yellow
+              // has to as well — 400 on the black fill, 600 on the white.
+              <Video
+                className="size-3.5 shrink-0 text-yellow-400 dark:text-yellow-600"
+                aria-hidden
+              />
             }
           />
           <MagneticButton
