@@ -42,15 +42,16 @@ export function LenisSmoothScroll() {
       const lenis = new Lenis({
         anchors: true,
         autoRaf: false,
-        duration: 1.8,
-        easing: (t) => {
-          // Smooth cubic easing - very smooth and luxurious
-          if (t === 0) return 0
-          if (t === 1) return 1
-          // Cubic easing-out
-          return 1 - Math.pow(1 - t, 3)
-        },
-        lerp: 0.1, // Smooth interpolation
+        // `lerp` is the whole feel. It is the fraction of the remaining
+        // distance covered each frame, so higher is faster: 0.1 needed
+        // ~22 frames (~370ms) to arrive, which reads as lag. 0.18 gets
+        // there in ~12 (~200ms) - still eased, but it keeps up with the
+        // wheel instead of gliding on after it.
+        //
+        // No `duration` or `easing` here on purpose: Lenis ignores both
+        // whenever `lerp` is set, so passing them only looks like they
+        // are doing something.
+        lerp: 0.18,
       })
       lenisRef.current = lenis
 
