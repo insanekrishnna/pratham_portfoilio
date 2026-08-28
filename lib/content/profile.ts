@@ -19,18 +19,6 @@ export const profile = {
   availability: "Open to internships & freelance work",
 } as const
 
-/** Cycled above the handle in the hero. `lang` keeps each script legible. */
-export const greetings: { text: string; lang: string }[] = [
-  { text: "hello", lang: "en" },
-  { text: "नमस्ते", lang: "hi" },
-  { text: "hola", lang: "es" },
-  { text: "こんにちは", lang: "ja" },
-  { text: "bonjour", lang: "fr" },
-  { text: "olá", lang: "pt" },
-  { text: "안녕하세요", lang: "ko" },
-  { text: "ciao", lang: "it" },
-]
-
 /**
  * The About list. `strong` fragments are rendered as emphasised,
  * underlined spans — the same treatment the headline keywords get.

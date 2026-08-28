@@ -1,7 +1,6 @@
 import { MapPin } from "lucide-react"
 
 import { AvatarSwitch } from "@/components/home/avatar-switch"
-import { GreetingCycle } from "@/components/home/greeting-cycle"
 import { TimeCounter } from "@/components/common/time-counter"
 import { RoleCycle } from "@/components/home/role-cycle"
 import { profile } from "@/lib/content/profile"
@@ -22,10 +21,7 @@ export function Hero() {
           against it — the avatar column is taller now that it carries
           the switch beneath the image. */}
       <div className="flex min-w-0 flex-1 flex-col gap-0 pt-4 sm:pt-5">
-        {/* The greeting takes the slot the handle used to hold, so the
-            clock keeps its place and the whole stack rides one line up. */}
-        <div className="text-muted-foreground flex items-center justify-between gap-2 text-xs">
-          <GreetingCycle className="min-w-0 font-mono" />
+        <div className="text-muted-foreground flex items-center justify-end text-xs">
           <TimeCounter
             className="shrink-0 font-mono tabular-nums"
             timeZone={profile.timezone}
