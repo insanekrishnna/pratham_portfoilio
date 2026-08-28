@@ -23,11 +23,11 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="relative">
           <div
             aria-hidden
-            className="border-border pointer-events-none absolute top-0 -left-4 bottom-0 z-0 w-4 border-r md:-left-6 md:w-6 dark:opacity-60"
+            className="border-border pointer-events-none absolute top-0 bottom-0 z-0 hidden border-r md:-left-6 md:block md:w-6 dark:opacity-60"
           />
           <div
             aria-hidden
-            className="border-border pointer-events-none absolute top-0 -right-4 bottom-0 z-0 w-4 border-l md:-right-6 md:w-6 dark:opacity-60"
+            className="border-border pointer-events-none absolute top-0 bottom-0 z-0 hidden border-l md:-right-6 md:block md:w-6 dark:opacity-60"
           />
 
           <div id="main" className="relative z-10">

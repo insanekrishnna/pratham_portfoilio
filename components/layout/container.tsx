@@ -6,10 +6,8 @@ import { cn } from "@/lib/utils"
  * centred, edge-padded on small screens and flush from md up so the
  * side rails sit exactly against the content.
  *
- * The mobile padding is 24px against rails offset 16px, which leaves an
- * 8px gap between each rail and the screen edge. Matching the two (both
- * 16px) put the rails hard on the viewport edge, where `overflow-x:
- * clip` shaved the right one on devices whose pixel ratio is not whole.
+ * The rails only exist from md up, so on mobile this padding is the
+ * only inset and nothing sits against the viewport edge to be clipped.
  */
 export function Container({
   children,
@@ -21,7 +19,7 @@ export function Container({
   as?: "div" | "section" | "header" | "footer" | "nav"
 }) {
   return (
-    <Tag className={cn("mx-auto w-full px-6 md:max-w-[715px] md:px-0", className)}>
+    <Tag className={cn("mx-auto w-full px-4 md:max-w-[715px] md:px-0", className)}>
       {children}
     </Tag>
   )
