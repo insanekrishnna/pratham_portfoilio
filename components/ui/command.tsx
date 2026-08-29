@@ -89,6 +89,11 @@ function CommandList({
   return (
     <CommandPrimitive.List
       data-slot="command-list"
+      // Lenis hijacks wheel events on the window, so a nested scroller
+      // never sees them - it has to be opted out by name. The body-level
+      // scroll lock alone was not enough: Lenis drives scroll itself and
+      // does not consult it.
+      data-lenis-prevent
       className={cn(
         "max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto overscroll-contain",
         className
