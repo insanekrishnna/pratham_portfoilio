@@ -92,8 +92,16 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit" disabled={state === "loading" || !canSubmit}>
+      {/* Full width and on its own line. Sharing a row with the "goes
+          straight to" note made the two compete, and a half-width button
+          under a full-width textarea reads as an afterthought. The note
+          sits under it as a caption instead. */}
+      <div className="space-y-2 pt-1">
+        <Button
+          type="submit"
+          disabled={state === "loading" || !canSubmit}
+          className="bg-foreground text-background h-11 w-full rounded-md text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-45"
+        >
           {state === "loading" ? (
             <>
               <Loader2 className="animate-spin" aria-hidden />
@@ -106,9 +114,9 @@ export function ContactForm() {
             </>
           )}
         </Button>
-        <p className="text-muted-foreground text-xs">
+        <p className="text-muted-foreground text-center text-xs">
           Goes straight to{" "}
-          <span className="text-foreground font-medium">{profile.email}</span>.
+          <span className="text-foreground font-medium">{profile.email}</span>
         </p>
       </div>
 
