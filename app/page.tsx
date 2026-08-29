@@ -27,13 +27,13 @@ export default function HomePage() {
       <ExperienceSection />
 
       <HatchRule />
+      <GitHubActivity />
+
+      <HatchRule />
       <ProjectsSection />
 
       <HatchRule />
       <Stack />
-
-      <HatchRule />
-      <GitHubActivity />
 
       <HatchRule />
       <Achievements />
