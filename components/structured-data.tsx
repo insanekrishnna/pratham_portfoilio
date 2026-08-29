@@ -63,7 +63,7 @@ export default function StructuredData() {
         url: siteUrl,
         name: `${profile.name} Portfolio`,
         description:
-          "Portfolio, projects, experience and writing of Pratham Yadav - Full Stack Developer.",
+          "Portfolio, projects and experience of Pratham Yadav - Full Stack Developer.",
         publisher: { "@id": `${siteUrl}/#person` },
       },
     ],

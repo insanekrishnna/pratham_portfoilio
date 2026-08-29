@@ -114,25 +114,31 @@ export function ContactForm() {
             </>
           )}
         </Button>
-        <p className="text-muted-foreground text-center text-xs">
-          Goes straight to{" "}
-          <span className="text-foreground font-medium">{profile.email}</span>
-        </p>
-      </div>
+        {/* One row under the button: the result on the left where
+            reading starts, the address held to the right. `ml-auto`
+            rather than justify-between, so the address stays put whether
+            or not there is a message beside it. */}
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
+          {feedback ? (
+            <p
+              role="status"
+              aria-live="polite"
+              className={
+                state === "success"
+                  ? "text-emerald-600 dark:text-emerald-400"
+                  : "text-destructive"
+              }
+            >
+              {feedback}
+            </p>
+          ) : null}
 
-      {feedback ? (
-        <p
-          role="status"
-          aria-live="polite"
-          className={
-            state === "success"
-              ? "text-sm text-emerald-600 dark:text-emerald-400"
-              : "text-destructive text-sm"
-          }
-        >
-          {feedback}
-        </p>
-      ) : null}
+          <p className="text-muted-foreground ml-auto">
+            Goes straight to{" "}
+            <span className="text-foreground font-medium">{profile.email}</span>
+          </p>
+        </div>
+      </div>
     </form>
   )
 }

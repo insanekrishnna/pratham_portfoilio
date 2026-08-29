@@ -8,7 +8,6 @@ import { ProjectsSection } from "@/components/home/projects-section"
 import { Stack } from "@/components/home/stack"
 import { GitHubActivity } from "@/components/home/github-activity"
 import { Achievements } from "@/components/home/milestones"
-import { Writing } from "@/components/home/writing"
 import { SkillsVenn } from "@/components/common/skills-venn"
 import { CTA } from "@/components/home/cta"
 
@@ -38,9 +37,6 @@ export default function HomePage() {
 
       <HatchRule />
       <Achievements />
-
-      <HatchRule />
-      <Writing />
 
       {/* Brings its own rule; the CTA sits inside its frame, with no
           divider between the circles and the invitation. */}

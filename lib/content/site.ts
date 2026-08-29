@@ -4,7 +4,6 @@ export const siteUrl = "https://pratham.dev"
 
 export const navLinks = [
   { name: "Projects", href: "/projects" },
-  { name: "Writing", href: "/#writing" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -17,7 +16,6 @@ export const sectionIds = {
   stack: "stack",
   activity: "activity",
   achievements: "achievements",
-  writing: "writing",
   contact: "contact",
 } as const
 
