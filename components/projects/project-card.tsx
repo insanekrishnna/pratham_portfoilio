@@ -18,8 +18,11 @@ const projectButtonClass = cn(chipClass, "gap-1 px-1.5 py-0.5")
  */
 function Preview({ project }: { project: Project }) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  // The frame lives on the wrapper, not here, so the border stays put
+  // while the picture inside it drifts in. 3% over half a second is
+  // enough to register as alive without reading as a zoom.
   const shared =
-    "border-border h-44 w-full rounded-md border object-cover object-top sm:h-48"
+    "h-44 w-full object-cover object-top transition-transform duration-500 ease-out group-hover/media:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover/media:scale-100 sm:h-48"
 
   if (!project.video) {
     return (
@@ -70,7 +73,10 @@ export function ProjectCard({ project }: { project: Project }) {
         href={primaryHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="focus-visible:ring-ring/50 block overflow-hidden rounded-md outline-none focus-visible:ring-[3px]"
+        // `group/media` and not the card's own group: the drift should
+        // answer the pointer being on the picture, not anywhere on the
+        // entry. `overflow-hidden` is what keeps the scale inside the frame.
+        className="group/media border-border focus-visible:ring-ring/50 block overflow-hidden rounded-md border outline-none focus-visible:ring-[3px]"
       >
         <Preview project={project} />
       </a>
