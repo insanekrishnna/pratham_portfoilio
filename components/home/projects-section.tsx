@@ -12,7 +12,8 @@ export function ProjectsSection() {
   return (
     <section aria-labelledby={sectionIds.projects}>
       <SectionHeading id={sectionIds.projects}>Projects</SectionHeading>
-      <ProjectGrid projects={projects} />
+      {/* Two here; the rest live behind "See all projects". */}
+      <ProjectGrid projects={projects.slice(0, 2)} />
       <RuledRow className="mt-1">
         <Button size="sm" asChild>
           <Link href="/projects">

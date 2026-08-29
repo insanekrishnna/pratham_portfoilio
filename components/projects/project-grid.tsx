@@ -18,15 +18,10 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
 
   return (
     <div className="relative">
+      {/* One hairline down the middle, not the twin rules it had before. */}
       <div
         aria-hidden
-        className="bg-border pointer-events-none absolute top-0 bottom-0 z-0 hidden w-px sm:block"
-        style={{ left: "calc(50% - 6px)" }}
-      />
-      <div
-        aria-hidden
-        className="bg-border pointer-events-none absolute top-0 bottom-0 z-0 hidden w-px sm:block"
-        style={{ left: "calc(50% + 5px)" }}
+        className="bg-border pointer-events-none absolute top-0 bottom-0 left-1/2 z-0 hidden w-px sm:block"
       />
 
       <div className="relative grid grid-cols-1 sm:grid-cols-2">

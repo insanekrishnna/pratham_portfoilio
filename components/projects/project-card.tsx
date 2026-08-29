@@ -5,7 +5,6 @@ import Image from "next/image"
 import { GitHubIcon } from "@/components/icons/brand"
 
 import type { Project } from "@/lib/content/projects"
-import { cn } from "@/lib/utils"
 
 /**
  * Projects with a clip show it in place of the still on hover or focus.
@@ -13,6 +12,8 @@ import { cn } from "@/lib/utils"
  */
 function Preview({ project }: { project: Project }) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const shared =
+    "border-border h-44 w-full rounded-md border object-cover object-top sm:h-48"
 
   if (!project.video) {
     return (
@@ -21,7 +22,7 @@ function Preview({ project }: { project: Project }) {
         alt=""
         width={1200}
         height={630}
-        className="h-48 w-full rounded-lg object-cover object-top sm:h-52"
+        className={shared}
       />
     )
   }
@@ -36,48 +37,59 @@ function Preview({ project }: { project: Project }) {
       playsInline
       preload="none"
       aria-hidden
-      className="h-48 w-full rounded-lg object-cover object-top sm:h-52"
+      className={shared}
       onMouseEnter={() => void videoRef.current?.play().catch(() => {})}
       onMouseLeave={() => videoRef.current?.pause()}
     />
   )
 }
 
+/**
+ * Deliberately not a card: no border, no shadow, no rounded panel. The
+ * rest of the site is flat sections split by hairlines, and a raised box
+ * sitting inside that read as a widget bolted on from somewhere else.
+ * The only framed thing here is the screenshot.
+ *
+ * Type and chips are the same scale the experience rows and skill
+ * badges use, so a project entry reads as another row of the same page.
+ */
 export function ProjectCard({ project }: { project: Project }) {
   const { website, github } = project.links
   const primaryHref = website ?? github
 
   return (
-    <div className="group/card border-border bg-background/50 relative flex flex-1 flex-col gap-1 overflow-hidden rounded-xl border p-2 shadow-sm transition-colors hover:bg-neutral-100/60 dark:border-neutral-800 dark:bg-neutral-950/70 dark:hover:bg-neutral-900/40">
+    <div className="group/card relative flex flex-1 flex-col gap-2">
       <a
         href={primaryHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="focus-visible:ring-ring/50 flex flex-1 flex-col gap-1 rounded-lg text-left outline-none focus-visible:ring-[3px]"
+        className="focus-visible:ring-ring/50 flex flex-1 flex-col gap-2 rounded-md text-left outline-none focus-visible:ring-[3px]"
       >
-        <Preview project={project} />
-
-        <div className="mt-2.5 px-1 pt-0.5">
-          <h3 className="group-hover/card:text-primary text-lg leading-snug font-bold">
-            {project.title}
-          </h3>
+        <div className="overflow-hidden rounded-md">
+          <Preview project={project} />
         </div>
 
-        {project.subheading && (
-          <p className="-mt-1 mb-1.5 px-1 text-[11px] font-medium text-neutral-500 dark:text-neutral-400">
-            {project.subheading}
-          </p>
-        )}
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="group-hover/card:text-primary min-w-0 truncate text-[15px] leading-snug font-semibold">
+            {project.title}
+          </h3>
+          {project.subheading && (
+            <span className="text-muted-foreground shrink-0 text-[11px]">
+              {project.subheading}
+            </span>
+          )}
+        </div>
 
-        <p className="text-muted-foreground line-clamp-3 min-h-[3.5rem] px-1 text-sm leading-relaxed">
+        {/* One line only - the full copy lives on the project page. */}
+        <p className="text-muted-foreground truncate text-[13px] leading-snug">
           {project.description}
         </p>
 
-        <ul className="mt-1 flex flex-wrap gap-1.5 px-1">
+        <ul className="flex flex-wrap gap-1.5">
           {project.technologies.slice(0, 4).map((tech) => (
             <li
               key={tech}
-              className="bg-background text-muted-foreground rounded-sm border px-1.5 py-0.5 text-xs shadow-xs select-none"
+              className="border-border bg-background text-muted-foreground rounded-md border px-1.5 py-0.5 text-[11px] font-medium whitespace-nowrap select-none"
             >
               {tech}
             </li>
@@ -85,36 +97,26 @@ export function ProjectCard({ project }: { project: Project }) {
         </ul>
       </a>
 
-      <div className="border-border relative z-20 mt-2 flex items-center border-t pt-2">
-        {website && github ? (
-          <>
-            <a
-              href={website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 w-full rounded-sm border-r text-center text-sm text-nowrap outline-none transition-colors focus-visible:ring-[3px]"
-            >
-              Live link
-            </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 flex w-full items-center justify-center gap-2 rounded-sm text-sm outline-none transition-colors focus-visible:ring-[3px]"
-            >
-              GitHub
-              <GitHubIcon className="size-3.5" aria-hidden />
-            </a>
-          </>
-        ) : (
+      <div className="border-border relative z-20 mt-auto flex items-center gap-4 border-t pt-2 text-xs">
+        {website && (
           <a
-            href={primaryHref}
+            href={website}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground flex w-full items-center justify-center gap-2 text-sm transition-colors"
+            className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 rounded-sm outline-none transition-colors focus-visible:ring-[3px]"
           >
-            {github ? "GitHub" : "Live link"}
-            {github && <GitHubIcon className="size-3.5" aria-hidden />}
+            Live link
+          </a>
+        )}
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm outline-none transition-colors focus-visible:ring-[3px]"
+          >
+            GitHub
+            <GitHubIcon className="size-3" aria-hidden />
           </a>
         )}
       </div>
