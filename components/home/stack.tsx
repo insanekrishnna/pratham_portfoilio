@@ -2,9 +2,11 @@ import { Braces, Code2, Database, type LucideIcon } from "lucide-react"
 import * as simpleIcons from "simple-icons"
 import type { SimpleIcon } from "simple-icons"
 
+import { chipClass } from "@/lib/button-styles"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { stack } from "@/lib/content/stack"
 import { sectionIds } from "@/lib/content/site"
+import { cn } from "@/lib/utils"
 
 /**
  * SQL and REST are specifications, not products, and VS Code's mark is
@@ -62,7 +64,7 @@ export function Stack() {
                   - without navigating away from the page. */}
               <button
                 type="button"
-                className="focus-visible:ring-ring/50 bg-background border-border flex cursor-pointer items-center gap-1.5 rounded-md border px-2 py-1 text-xs font-medium whitespace-nowrap outline-none transition-colors select-none hover:border-neutral-400 focus-visible:ring-[3px] dark:hover:border-neutral-600"
+                className={cn(chipClass, "cursor-pointer")}
               >
                 {Generic && (
                   <Generic

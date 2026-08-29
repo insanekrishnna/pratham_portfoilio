@@ -4,7 +4,12 @@ import { useRef } from "react"
 import Image from "next/image"
 import { GitHubIcon } from "@/components/icons/brand"
 
+import { chipClass } from "@/lib/button-styles"
 import type { Project } from "@/lib/content/projects"
+import { cn } from "@/lib/utils"
+
+/** The skill badge, trimmed a little to sit on the title's line. */
+const projectButtonClass = cn(chipClass, "gap-1 px-1.5 py-0.5")
 
 /**
  * Projects with a clip show it in place of the still on hover or focus.
@@ -50,8 +55,9 @@ function Preview({ project }: { project: Project }) {
  * sitting inside that read as a widget bolted on from somewhere else.
  * The only framed thing here is the screenshot.
  *
- * Type and chips are the same scale the experience rows and skill
- * badges use, so a project entry reads as another row of the same page.
+ * The two links sit on the title's line rather than in a footer strip,
+ * which is what the subheading used to occupy. They have to live outside
+ * the media anchor - a link inside a link is invalid markup.
  */
 export function ProjectCard({ project }: { project: Project }) {
   const { website, github } = project.links
@@ -63,63 +69,63 @@ export function ProjectCard({ project }: { project: Project }) {
         href={primaryHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="focus-visible:ring-ring/50 flex flex-1 flex-col gap-2 rounded-md text-left outline-none focus-visible:ring-[3px]"
+        className="focus-visible:ring-ring/50 block overflow-hidden rounded-md outline-none focus-visible:ring-[3px]"
       >
-        <div className="overflow-hidden rounded-md">
-          <Preview project={project} />
-        </div>
-
-        <div className="flex items-baseline justify-between gap-3">
-          <h3 className="group-hover/card:text-primary min-w-0 truncate text-[15px] leading-snug font-semibold">
-            {project.title}
-          </h3>
-          {project.subheading && (
-            <span className="text-muted-foreground shrink-0 text-[11px]">
-              {project.subheading}
-            </span>
-          )}
-        </div>
-
-        {/* One line only - the full copy lives on the project page. */}
-        <p className="text-muted-foreground truncate text-[13px] leading-snug">
-          {project.description}
-        </p>
-
-        <ul className="flex flex-wrap gap-1.5">
-          {project.technologies.slice(0, 4).map((tech) => (
-            <li
-              key={tech}
-              className="border-border bg-background text-muted-foreground rounded-md border px-1.5 py-0.5 text-[11px] font-medium whitespace-nowrap select-none"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <Preview project={project} />
       </a>
 
-      <div className="border-border relative z-20 mt-auto flex items-center gap-4 border-t pt-2 text-xs">
-        {website && (
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="min-w-0 truncate text-[15px] leading-snug font-semibold">
           <a
-            href={website}
+            href={primaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 rounded-sm outline-none transition-colors focus-visible:ring-[3px]"
+            className="hover:text-primary focus-visible:ring-ring/50 rounded-sm outline-none transition-colors focus-visible:ring-[3px]"
           >
-            Live link
+            {project.title}
           </a>
-        )}
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm outline-none transition-colors focus-visible:ring-[3px]"
-          >
-            GitHub
-            <GitHubIcon className="size-3" aria-hidden />
-          </a>
-        )}
+        </h3>
+
+        <div className="flex shrink-0 items-center gap-1.5">
+          {website && (
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={projectButtonClass}
+            >
+              Live
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={projectButtonClass}
+            >
+              <GitHubIcon className="size-3 shrink-0" aria-hidden />
+              Code
+            </a>
+          )}
+        </div>
       </div>
+
+      {/* One line only - the full copy lives on the project page. */}
+      <p className="text-muted-foreground truncate text-[13px] leading-snug">
+        {project.description}
+      </p>
+
+      <ul className="flex flex-wrap gap-1.5">
+        {project.technologies.slice(0, 4).map((tech) => (
+          <li
+            key={tech}
+            className="border-border bg-background text-muted-foreground rounded-md border px-1.5 py-0.5 text-[11px] font-medium whitespace-nowrap select-none"
+          >
+            {tech}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
