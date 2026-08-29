@@ -4,6 +4,7 @@ import { useRef } from "react"
 import Image from "next/image"
 import { GitHubIcon } from "@/components/icons/brand"
 
+import { TechIcon, slugForTech } from "@/components/common/tech-icon"
 import { chipClass } from "@/lib/button-styles"
 import type { Project } from "@/lib/content/projects"
 import { cn } from "@/lib/utils"
@@ -116,13 +117,15 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.description}
       </p>
 
+      {/* The skill badge with its brand mark, held at the size these
+          already were - only the styling is borrowed, not the scale. */}
       <ul className="flex flex-wrap gap-1.5">
         {project.technologies.slice(0, 4).map((tech) => (
-          <li
-            key={tech}
-            className="border-border bg-background text-muted-foreground rounded-md border px-1.5 py-0.5 text-[11px] font-medium whitespace-nowrap select-none"
-          >
-            {tech}
+          <li key={tech} className="flex">
+            <span className={cn(chipClass, "gap-1 px-1.5 py-0.5 text-[11px]")}>
+              <TechIcon slug={slugForTech(tech)} className="size-3 shrink-0" />
+              {tech}
+            </span>
           </li>
         ))}
       </ul>
