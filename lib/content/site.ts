@@ -1,6 +1,6 @@
 import { profile } from "./profile"
 
-export const siteUrl = "https://pratham.dev"
+export const siteUrl = "https://prathm.me"
 
 export const socialPreviewTitle = "Pratham, a designer, from India."
 export const socialPreviewImage = {
