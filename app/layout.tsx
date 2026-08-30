@@ -15,6 +15,7 @@ import { SiteShell } from "@/components/layout/site-shell"
 import StructuredData from "@/components/structured-data"
 import {
   siteUrl,
+  socialPreviewDescription,
   socialPreviewImage,
   socialPreviewTitle,
 } from "@/lib/content/site"
@@ -25,13 +26,12 @@ const pixelifySans = Pixelify_Sans({
   variable: "--font-pixelify",
 })
 
-const description =
-  "TL;DR: Full-Stack Software Engineer building scalable, production-grade systems at early-stage startups. Experienced in end-to-end ownership, system design, backend services, frontend applications, and taking products from architecture to production."
+const description = socialPreviewDescription
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pratham Yadav - Full Stack Developer | Portfolio",
+    default: socialPreviewTitle,
     template: "%s | Pratham Yadav",
   },
   description,
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     "contact:country_name": "India",
     "contact:region": "Indore",
     "contact:locality": "Indore",
-    "twitter:domain": "pratham.dev",
+    "twitter:domain": "prathm.me",
     "twitter:url": siteUrl,
     "twitter:image:alt": socialPreviewImage.alt,
     "whatsapp:image": socialPreviewImage.url,
