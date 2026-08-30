@@ -6,10 +6,10 @@ export const socialPreviewTitle = "Pratham Yadav | Design Engineer"
 export const socialPreviewDescription =
   "Pratham Yadav is a Design Engineer with 2+ years of experience, known for pixel-perfect execution and an obsessive attention to detail."
 export const socialPreviewImage = {
-  url: `${siteUrl}/social-preview-v2`,
-  width: 1200,
-  height: 630,
-  alt: "Pratham Yadav | Design Engineer",
+  url: `${siteUrl}/portfolio-web-preview.png?v=3`,
+  width: 815,
+  height: 467,
+  alt: "Pratham Yadav's portfolio profile and about section",
 }
 
 export const navLinks = [
