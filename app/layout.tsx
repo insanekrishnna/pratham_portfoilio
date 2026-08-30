@@ -13,7 +13,11 @@ import { LenisSmoothScroll } from "@/components/lenis-smooth-scroll"
 import { UserCursor } from "@/components/common/user-cursor"
 import { SiteShell } from "@/components/layout/site-shell"
 import StructuredData from "@/components/structured-data"
-import { siteUrl } from "@/lib/content/site"
+import {
+  siteUrl,
+  socialPreviewImage,
+  socialPreviewTitle,
+} from "@/lib/content/site"
 
 const pixelifySans = Pixelify_Sans({
   subsets: ["latin"],
@@ -23,8 +27,6 @@ const pixelifySans = Pixelify_Sans({
 
 const description =
   "TL;DR: Full-Stack Software Engineer building scalable, production-grade systems at early-stage startups. Experienced in end-to-end ownership, system design, backend services, frontend applications, and taking products from architecture to production."
-
-const ogImage = "https://freeimage.host/i/pratham-portfolioo.f1C7zKl"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -92,24 +94,19 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Pratham Yadav Portfolio",
-    title: "Pratham Yadav - Full Stack Developer",
+    title: socialPreviewTitle,
     description,
     images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Pratham Yadav - Full Stack Developer Portfolio",
-      },
+      { ...socialPreviewImage, type: "image/png" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@insanekrishnaa",
     creator: "@insanekrishnaa",
-    title: "Pratham Yadav - Full Stack Developer",
+    title: socialPreviewTitle,
     description,
-    images: [ogImage],
+    images: [socialPreviewImage],
   },
   icons: {
     icon: "/favicon?v=3",
@@ -126,9 +123,9 @@ export const metadata: Metadata = {
     "contact:locality": "Indore",
     "twitter:domain": "pratham.dev",
     "twitter:url": siteUrl,
-    "twitter:image:alt": "Pratham Yadav - Full Stack Developer Portfolio",
-    "whatsapp:image": ogImage,
-    "whatsapp:title": "Pratham Yadav - Full Stack Developer",
+    "twitter:image:alt": socialPreviewImage.alt,
+    "whatsapp:image": socialPreviewImage.url,
+    "whatsapp:title": socialPreviewTitle,
     "whatsapp:description": description,
   },
 }

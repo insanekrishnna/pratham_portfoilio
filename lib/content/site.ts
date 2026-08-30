@@ -2,6 +2,14 @@ import { profile } from "./profile"
 
 export const siteUrl = "https://pratham.dev"
 
+export const socialPreviewTitle = "Pratham, a designer, from India."
+export const socialPreviewImage = {
+  url: `${siteUrl}/portfolio-web-preview.png`,
+  width: 815,
+  height: 467,
+  alt: "Pratham Yadav's portfolio profile and about section",
+}
+
 export const navLinks = [
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
