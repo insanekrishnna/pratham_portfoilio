@@ -18,7 +18,7 @@ const STORAGE_KEY = "ui-sound"
  * Shared by every interaction so the whole interface clicks alike.
  */
 export const CLICK_SOUND = "/sounds/click.mp3"
-export const CLICK_VOLUME = 0.3
+export const CLICK_VOLUME = 0.375
 
 type Feedback = {
   soundEnabled: boolean
@@ -92,15 +92,17 @@ export function UiFeedbackProvider({ children }: { children: React.ReactNode }) 
     }
   }, [soundEnabled])
 
-  // One delegated listener instead of a handler per control: every
-  // button, link and menu item on the site clicks alike, including ones
-  // added later, and no component has to remember to opt in.
+  // One delegated listener instead of a handler per control. Native
+  // buttons and button-like controls opt in automatically; links only
+  // click when they are deliberately styled as buttons and carry the
+  // data-ui-feedback marker. This keeps ordinary navigation and large
+  // linked page regions silent.
   useEffect(() => {
     const onPointerDown = (event: PointerEvent) => {
       const target = event.target as Element | null
       if (!target?.closest) return
       const hit = target.closest(
-        'a[href], button, summary, [role="button"], [role="menuitem"], [role="option"], [role="switch"], [role="tab"], input[type="submit"], input[type="checkbox"], input[type="radio"], label[for]'
+        'button, [data-ui-feedback="tap"], [role="button"], [role="menuitem"], [role="option"], [role="switch"], [role="tab"], input[type="submit"]'
       )
       if (!hit) return
       // A disabled control gives no feedback, because nothing happened.

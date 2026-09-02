@@ -43,6 +43,7 @@ export function Connect() {
               {item.isExternal ? (
                 <a
                   href={item.href}
+                  data-ui-feedback="tap"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(contactButtonClass, "w-full")}
@@ -53,6 +54,7 @@ export function Connect() {
               ) : (
                 <Link
                   href={item.href}
+                  data-ui-feedback="tap"
                   className={cn(contactButtonClass, "w-full")}
                 >
                   <Icon className="size-3.5 shrink-0" />

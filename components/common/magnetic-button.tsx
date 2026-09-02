@@ -136,6 +136,7 @@ export function MagneticButton({
     <a
       ref={buttonRef}
       href={href}
+      data-ui-feedback="tap"
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}

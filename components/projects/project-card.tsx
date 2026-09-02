@@ -97,6 +97,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {website && (
             <a
               href={website}
+              data-ui-feedback="tap"
               target="_blank"
               rel="noopener noreferrer"
               className={projectButtonClass}
@@ -107,6 +108,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {github && (
             <a
               href={github}
+              data-ui-feedback="tap"
               target="_blank"
               rel="noopener noreferrer"
               className={projectButtonClass}
