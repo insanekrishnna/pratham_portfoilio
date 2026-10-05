@@ -34,10 +34,10 @@ export const sectionIds = {
 export const skillsVenn = {
   image: "/pratham.png",
   skills: {
-    top: "Frontend Architecture",
-    left: "Design Systems",
+    top: "Backend Architecture",
+    left: "Design Engineering",
     right: "Growth & GTM",
-    bottom: "Product Thinking\n& User Research",
+    bottom: "Product Design\n& Research",
   },
 }
 
