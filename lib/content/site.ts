@@ -1,4 +1,5 @@
 import { profile } from "./profile"
+import portfolioWebPreview from "@/public/portfolio-web-preview.png"
 
 export const siteUrl = "https://prathm.me"
 
@@ -6,9 +7,10 @@ export const socialPreviewTitle = "Pratham Yadav | Design Engineer"
 export const socialPreviewDescription =
   "Pratham Yadav is a Design Engineer with 2+ years of experience, known for pixel-perfect execution and an obsessive attention to detail."
 export const socialPreviewImage = {
-  url: `${siteUrl}/portfolio-web-preview.png?v=3`,
-  width: 815,
-  height: 467,
+  // Next.js includes a content hash in the URL so image updates get a fresh cache key.
+  url: `${siteUrl}${portfolioWebPreview.src}`,
+  width: portfolioWebPreview.width,
+  height: portfolioWebPreview.height,
   alt: "Pratham Yadav's portfolio profile and about section",
 }
 
