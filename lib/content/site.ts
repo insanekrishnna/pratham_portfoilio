@@ -3,7 +3,7 @@ import portfolioWebPreview from "@/public/portfolio-web-preview.png"
 
 export const siteUrl = "https://prathm.me"
 
-export const socialPreviewTitle = "Pratham Yadav | Design Engineer"
+export const socialPreviewTitle = "Pratham | Developer | Designer | Growth"
 export const socialPreviewDescription =
   "Pratham Yadav is a Design Engineer with 2+ years of experience, known for pixel-perfect execution and an obsessive attention to detail."
 export const socialPreviewImage = {
