@@ -35,7 +35,7 @@ export const skillsVenn = {
   image: "/pratham.png",
   skills: {
     top: "Backend Architecture",
-    left: "Design Engineering",
+    left: "Design Engineer",
     right: "Growth & GTM",
     bottom: "Product Design\n& Research",
   },
